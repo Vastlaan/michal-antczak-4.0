@@ -5,9 +5,11 @@ import {lightTheme, darkTheme} from './colors'
 // FONTS
 import {fonts} from './fonts'
 // CONTAINERS
-import {SectionNarrow} from './containers'
+import {SectionNarrow,FlexRow, FlexCol} from './containers'
 // TYPOGRAPHY
-import {Heading1, Text} from './typography'  
+import {Heading1,Heading2,Heading3,Heading4, Text} from './typography'  
+// BUTTONS
+import {LinkSmall,LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmpty} from './buttons'
 
 export {
   // MEDIA QUERIES
@@ -18,8 +20,9 @@ export {
   //FONTS
   fonts,
   // CONTAINERS
-  SectionNarrow,
+  SectionNarrow,FlexRow, FlexCol,
   // TYPOGRAPHY
-  Heading1,
-  Text,
+  Heading1,Heading2,Heading3,Heading4, Text,
+  // BUTTONS
+  LinkSmall, LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmpty
 }

@@ -53,6 +53,9 @@ const StylesConatiner = createGlobalStyle`
       text-decoration: none;
       color:inherit;
   }
+  ul{
+    list-style: none;
+  }
   button{
       cursor: pointer;
       &:active,:focus{
