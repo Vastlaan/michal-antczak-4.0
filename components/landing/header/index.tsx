@@ -37,7 +37,7 @@ export default function HeaderComponent() {
       <BackgroundImage ref={image1}>
         <Image src='/img/header-1.jpg' alt='shoes' layout='fill' objectFit='cover' />
       </BackgroundImage>
-      <Heading1>Golden Shoes</Heading1>
+      <Heading1>Golden Shoe</Heading1>
       <Heading4 color="white">
         Shoes for <span>every</span> foot
       </Heading4>

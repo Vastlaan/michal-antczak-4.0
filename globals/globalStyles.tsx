@@ -1,22 +1,12 @@
 import React from "react";
-import { createGlobalStyle, DefaultTheme } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { respond, fonts } from "../styles";
+import {ThemeProps} from '../types'
 
 export default function GlobalStyles() {
     return <StylesConatiner />;
 }
-
-interface ThemeProps extends DefaultTheme {
-  theme: {
-    primary?: string,
-    secondary?: string,
-    greyLight?: string,
-    greyDark?: string,
-    black?: string,
-    white?: string
-  }
-}
-const StylesConatiner = createGlobalStyle`
+const StylesConatiner = createGlobalStyle<ThemeProps>`
   *,
   *::after,
   *::before{
@@ -44,7 +34,7 @@ const StylesConatiner = createGlobalStyle`
   
   body{
       overflow-x: hidden;
-      background-color: ${(p : ThemeProps) => p.theme.white};
+      background-color: ${(p) => p.theme.grey1};
   }
   h1,h2,h3,h4,h5,h6{
     font-family: ${fonts.heading};
@@ -68,8 +58,8 @@ const StylesConatiner = createGlobalStyle`
   input, textarea{
       &:active, :focus{
         outline: none;
-        box-shadow: 0 0 5px ${(p : ThemeProps) => p.theme.primary};
+        box-shadow: 0 0 5px ${(p) => p.theme.primary};
       }
-      color: ${(p : ThemeProps) => p.theme.greyDark}
+      color: ${(p) => p.theme.grey4}
   }
 `;

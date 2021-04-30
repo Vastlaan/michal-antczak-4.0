@@ -95,6 +95,12 @@ export const ButtonSecondary = styled.button<FlexibleComponentProps>`
   background-color: ${p=>p.theme.secondary};
   color: ${p=>p.theme.grey5};
   box-shadow: 0 1rem 1rem rgba(0,0,0,.3);
+  transition: all .3s;
+
+  &:hover{
+    background-color: ${p=>p.theme.grey5};
+    color: ${p=>p.theme.secondary};
+  }
 
 `
 
@@ -108,7 +114,13 @@ export const ButtonPrimary = styled.button<FlexibleComponentProps>`
   letter-spacing: .2rem;
   border: 3px solid ${p=>p.theme.grey5};
   background-color: ${p=>p.theme.primary};
-  color: ${p=>p.theme.grey5};
+  color: ${p=>p.theme.grey1};
   box-shadow: 0 1rem 1rem rgba(0,0,0,.3);
+  transition: all .3s;
+
+  &:hover{
+    background-color: ${p=>p.theme.grey5};
+    color: ${p=>p.theme.secondary};
+  }
 
 `

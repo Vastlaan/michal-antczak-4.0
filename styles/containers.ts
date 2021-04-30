@@ -1,16 +1,20 @@
 import styled from 'styled-components'
 import respond from './respond'
-import {FlexibleComponentProps, ThemeProps} from '../types'
+import {FlexibleComponentProps} from '../types'
 
 // SECTIONS AND HEADERS
 
 export const SectionNarrow = styled.section<FlexibleComponentProps>`
   max-width: 996px;
   margin: ${(p) =>p.margin?p.margin:"0 auto"};
-  background-color: ${(p:ThemeProps)=>p.theme.grey1};
   padding: 1.4rem;
 
   ${()=>respond('xxl', 'max-width:1225px')};
+`
+export const Section = styled.section<FlexibleComponentProps>`
+  margin: ${(p) =>p.margin?p.margin:"0 auto"};
+  background-color: ${(p)=>p.theme.grey1};
+  padding: 1.4rem;
 `
 export const FlexRow = styled.div<FlexibleComponentProps>`
   display:flex;

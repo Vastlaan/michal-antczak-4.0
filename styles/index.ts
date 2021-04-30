@@ -5,9 +5,9 @@ import {lightTheme, darkTheme} from './colors'
 // FONTS
 import {fonts} from './fonts'
 // CONTAINERS
-import {SectionNarrow,FlexRow, FlexCol} from './containers'
+import {Section,SectionNarrow,FlexRow, FlexCol} from './containers'
 // TYPOGRAPHY
-import {Heading1,Heading2,Heading3,Heading4, Text} from './typography'  
+import {Logo,Heading1,Heading2,Heading3,Heading4, Text,Anchor, TextItalic,TextBold} from './typography'  
 // BUTTONS
 import {LinkSmall,LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmpty} from './buttons'
 
@@ -20,9 +20,9 @@ export {
   //FONTS
   fonts,
   // CONTAINERS
-  SectionNarrow,FlexRow, FlexCol,
+  Section,SectionNarrow,FlexRow, FlexCol,
   // TYPOGRAPHY
-  Heading1,Heading2,Heading3,Heading4, Text,
+  Logo,Heading1,Heading2,Heading3,Heading4, Text,Anchor, TextItalic,TextBold,
   // BUTTONS
   LinkSmall, LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmpty
 }

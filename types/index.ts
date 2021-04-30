@@ -11,6 +11,7 @@ export interface ProductProps{
   image: string;
   stock: number;
   isPromoted: boolean;
+  isNew: boolean;
 }
 
 export interface ThemeProps extends DefaultTheme {
