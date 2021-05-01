@@ -9,7 +9,7 @@ class MyDocument extends Document {
                 <Head>
                     <meta charSet="utf-8" />
                     <meta name="theme-color" content="#1e1e24" />
-                    <link rel="icon" href="/favicon.svg" />
+                    <link rel="icon" href="/favicon.ico" />
 
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link

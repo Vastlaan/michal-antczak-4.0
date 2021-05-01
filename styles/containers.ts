@@ -11,6 +11,13 @@ export const SectionNarrow = styled.section<FlexibleComponentProps>`
 
   ${()=>respond('xxl', 'max-width:1225px')};
 `
+export const ContainerNarrow = styled.div<FlexibleComponentProps>`
+  max-width: 996px;
+  margin: 0 2.7rem;
+  padding: 1.4rem;
+
+  ${(p)=>respond('xxl', `max-width:1225px; margin:${p.margin?p.margin:'0 auto'} `)};
+`
 export const Section = styled.section<FlexibleComponentProps>`
   margin: ${(p) =>p.margin?p.margin:"0 auto"};
   background-color: ${(p)=>p.theme.grey1};
@@ -34,4 +41,13 @@ export const FlexCol = styled.div<FlexibleComponentProps>`
   justify-content: ${p=>p.justify?p.justify:'center'};
   align-items: ${p=>p.align?p.align:'center'};
   background-color: ${p=>p.background?p.background:'transparent'};
+`
+
+export const ProductsConatiner = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    ${()=>respond('m', 'flex-direction: row; flex-wrap: wrap;')}
 `

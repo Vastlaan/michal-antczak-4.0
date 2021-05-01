@@ -1,26 +1,31 @@
 import styled from 'styled-components'
 import {fonts} from './fonts'
-import {ThemeProps, FlexibleComponentProps} from '../types'
+import {FlexibleComponentProps} from '../types'
+import { respond } from '.'
 
 // Headings
 
 export const Heading1 = styled.h1<FlexibleComponentProps>`
-margin: ${p=>p.margin?p.margin:'0'};
+  margin: ${p=>p.margin?p.margin:'0'};
   font-family: ${fonts.heading};
-  font-size: 8.7rem;
+  font-size: 6.7rem;
   text-transform: uppercase;
   text-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
   letter-spacing: .5rem;
   color: ${(p)=>p.color?p.color:p.theme.grey1};
+  text-align: ${p=>p.align?p.align:'center'};
+
+  ${()=>respond('m','font-size: 8.7rem;')}
 `
 export const Heading2 = styled.h2<FlexibleComponentProps>`
-margin: ${p=>p.margin?p.margin:'0'};
+  margin: ${p=>p.margin?p.margin:'0'};
   font-family: ${fonts.heading};
   font-size: ${(p)=>p.size?p.size:'2.7rem'};
   text-align: ${p=>p.align?p.align: 'left'};
   text-transform: uppercase;
   letter-spacing: .4rem;
   color: ${(p)=>p.color?p.color:p.theme.primary};
+  text-align: ${p=>p.align?p.align:'center'};
 
   span{
     color: ${p=>p.theme.secondary};
@@ -33,6 +38,7 @@ margin: ${p=>p.margin?p.margin:'0'};
   text-transform: capitalize;
   letter-spacing: .2rem;
   color: ${(p)=>p.color?p.color:p.theme.primary};
+  text-align: ${p=>p.align?p.align:'center'};
 
   span{
     color: ${p=>p.theme.secondary};
@@ -45,6 +51,7 @@ export const Heading4 = styled.h4<FlexibleComponentProps>`
   text-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
   letter-spacing: .2rem;
   color: ${(p)=>p.color?p.color:p.theme.grey1};
+  text-align: ${p=>p.align?p.align:'center'};
 
   span{
     color: ${p=>p.theme.secondary};
@@ -86,6 +93,7 @@ export const Logo = styled.h1<FlexibleComponentProps>`
   margin: ${p=>p.margin?p.margin:'0'};
   font-size: 2.7rem;
   color:${p=>p.color?p.color:p.theme.grey4};
+  cursor: pointer;
   span{
     color:${p=>p.theme.grey5};
   }
@@ -93,13 +101,15 @@ export const Logo = styled.h1<FlexibleComponentProps>`
 export const Anchor = styled.a<FlexibleComponentProps>`
   position: relative;
   text-decoration: none;
-  margin: ${p=>p.margin?p.margin:'0'};
+  margin: .6rem 0;
   font-size: 1.9rem;
   color: ${(p)=>p.color?p.color:p.theme.grey1};
   max-width: ${(p)=>p.wide?'65rem':'45rem'};
   text-align: ${p=>p.align?p.align:'center'};
   cursor: pointer;
   transition: all .3s;
+
+  ${()=>respond('m','margin: .3rem 0;')}
 
   &::before{
       content: '';

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Image from 'next/image'
 import Link from 'next/link'
 import { GiSonicShoes} from 'react-icons/gi'
 import {FlexRow} from '../../../styles'
@@ -6,9 +7,9 @@ import {FlexRow} from '../../../styles'
 export default function LogoComponent() {
   return (
     <FlexRow>
-      <Link href='/cart'>
+      <Link href='/'>
         <LogoIcon>
-          <GiSonicShoes/>
+          <Image src='/logo.png' alt='logo' width='52' height='26'/>
         </LogoIcon>
       </Link>
     </FlexRow>
@@ -16,8 +17,6 @@ export default function LogoComponent() {
 }
 const LogoIcon = styled.div`
   cursor: pointer;
-  svg{
-    font-size: 2.7rem;
-    color: ${p=>p.theme.secondary};
-  }
+  position: relative;
+  z-index:99;
 `

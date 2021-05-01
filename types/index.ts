@@ -1,7 +1,7 @@
 import {  DefaultTheme } from 'styled-components'
 
 export interface ProductProps{
-   id: number;
+  id: string;
   category: string;
   group: string;        // actual product's family includes all variations of colors and sizes
   displayName: string;  // usually the same as group
@@ -12,6 +12,15 @@ export interface ProductProps{
   stock: number;
   isPromoted: boolean;
   isNew: boolean;
+  discount: number | null;     // for example 0.2  === 20%
+}
+
+export interface CategoryProps{
+  id: string;
+  type: string;
+  parent: string | null;
+  displayName: string;
+  link: string;
 }
 
 export interface ThemeProps extends DefaultTheme {

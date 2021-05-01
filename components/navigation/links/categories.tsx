@@ -2,7 +2,7 @@ import {useState} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { fonts,FlexRow, LinkItem, Heading3 } from '../../../styles'
-import {categories} from '../../../models/category'
+import {categories} from '../../../database_development'
 import {FlexibleComponentProps} from '../../../types'
 
 export default function CategoriesComponent() {
@@ -29,7 +29,7 @@ export default function CategoriesComponent() {
           <LinkContainer onMouseOver={()=>displaySubcategories(cat.type)} onMouseLeave={()=>hideSubcategories()}>
             <LinkItem>{cat.displayName}</LinkItem>
             <Subcategories top={top.type===cat.type && top.value}>
-              <Heading3>{cat.displayName}</Heading3>
+              <Heading3 align='left'>{cat.displayName}</Heading3>
               {categories.map((sub,i)=> sub.parent===cat.type && <Link href={sub.link} key={`${i}-sub`}>
                 <Sub>{sub.displayName}</Sub>
               </Link>)}

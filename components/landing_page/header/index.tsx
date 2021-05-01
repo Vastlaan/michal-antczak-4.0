@@ -3,6 +3,7 @@ import Link from 'next/link';
 import gsap from 'gsap'
 import Image from 'next/image';
 import styled from 'styled-components'
+import Categories from './categories'
 import { Heading1, Heading4, ButtonEmpty} from '../../../styles'
 
 export default function HeaderComponent() {
@@ -31,37 +32,23 @@ export default function HeaderComponent() {
 
   return (
     <Header>
+
       <BackgroundImage ref={image2}>
         <Image src='/img/header-2.jpg' alt='shoes' layout='fill' objectFit='cover' />
       </BackgroundImage>
+
       <BackgroundImage ref={image1}>
         <Image src='/img/header-1.jpg' alt='shoes' layout='fill' objectFit='cover' />
       </BackgroundImage>
-      <Heading1>Golden Shoe</Heading1>
-      <Heading4 color="white">
+
+      <Heading1 align='center'>Golden Shoe</Heading1>
+
+      <Heading4 align='center' color="white">
         Shoes for <span>every</span> foot
       </Heading4>
-      <Categories>
-        
-        <Link href='/men'>
-          <ButtonEmpty>
-            Shoes for him
-          </ButtonEmpty>
-        </Link>
-
-        <Link href='/women'>
-          <ButtonEmpty>
-            Shoes for her
-          </ButtonEmpty>
-        </Link>
-
-        <Link href='/kids'>
-          <ButtonEmpty>
-            Shoes for kids
-          </ButtonEmpty>      
-        </Link>
-        
-      </Categories>
+      
+      <Categories/>
+      
     </Header>
   )
 }
@@ -69,12 +56,13 @@ export default function HeaderComponent() {
 const Header = styled.header`
   position: relative;
   width: 100vw;
-  height: 60vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: 8.7rem;
 `
 const BackgroundImage = styled.div`
   position: absolute;
@@ -83,17 +71,12 @@ const BackgroundImage = styled.div`
   right:0;
   bottom: 0;
   width: 100vw;
-  height: 60vh;
+  min-height: 60vh;
   background-image: url('/img/header-1.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
 `
-const Categories = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.4rem auto;
-`
+
 

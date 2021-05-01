@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import styled from 'styled-components'
 import Categories from './categories'
-import { FlexRow, Logo } from '../../../styles'
+import { respond, FlexRow, Logo } from '../../../styles'
 
 
 export default function LinksComponent() {
@@ -9,7 +10,9 @@ export default function LinksComponent() {
     <Links>
 
     <FlexRow>
-      <Logo><span>Golden</span> Shoe</Logo>
+      <Link href='/'>
+        <Logo><span>Golden</span> Shoe</Logo>
+      </Link>
     </FlexRow>
 
     <Categories/>
@@ -19,11 +22,13 @@ export default function LinksComponent() {
 }
 
 const Links = styled.div`
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 2.7rem;
+  padding: 0rem 1.4rem;
   background-color: ${p=>p.theme.grey1};
   border-bottom: 1px solid rgba(0,0,0,.3);
+
+  ${()=>respond('m','display: flex;')}
 `
 
