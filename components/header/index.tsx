@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import styled from 'styled-components'
-import { Heading1, Heading4, ButtonEmpty} from '../../styles'
+import Navigation from './navigation'
+import { Heading1, Heading4} from '../../styles'
 import {FlexibleComponentProps} from '../../types'
 
 interface HeaderProps{
@@ -15,6 +15,8 @@ export default function HeaderComponent({title, body, image}:HeaderProps) {
   return (
     <Header url={image}>
 
+      <Navigation/>
+
       <Heading1>{title}</Heading1>
 
       <Heading4 color="white">
@@ -25,9 +27,11 @@ export default function HeaderComponent({title, body, image}:HeaderProps) {
 }
 
 const Header = styled.header<FlexibleComponentProps>`
+  padding: 1.4rem;
+  padding-top: 8.7rem;
   position: relative;
   width: 100vw;
-  height: 40vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,10 +42,6 @@ const Header = styled.header<FlexibleComponentProps>`
   background-size: cover;
   background-repeat: no-repeat;
 `
-const Categories = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.4rem auto;
-`
+
+
 

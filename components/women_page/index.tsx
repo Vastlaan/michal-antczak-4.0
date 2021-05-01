@@ -1,18 +1,21 @@
 import Header from '../header'
+import Categories from '../categories'
 import Products from '../products'
 import Subscribe from '../subscribe'
-import BackgroundVideo from '../video_background'
 
+import {categories} from '../../database_development' // this will be passed as prop from CMS
 import {products} from '../../database_development'   // this will be passed as prop from CMS
 
 
 export default function WomenPage(){
 
   const targetProducts = products.filter(prod=>prod.category.split('-')[0] === 'women')
+  const targetCategories = categories.filter(cat=>cat.parent==='women')
 
   return (
     <>
       <Header title={`Ladies collection`} body={`Grand collection of women's shoes`} image={`/img/header-1.jpg`}/>
+      <Categories categories={targetCategories} />
       <Products category="Women's shoes" products={targetProducts} link='/' />
       <Subscribe/>
     </>

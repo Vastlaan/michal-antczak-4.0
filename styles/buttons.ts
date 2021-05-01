@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {fonts} from './fonts'
 import {FlexibleComponentProps} from '../types'
+import { respond } from '.'
 
 export const LinkSmall = styled.a<FlexibleComponentProps>`
   text-decoration: none;
@@ -50,15 +51,6 @@ export const LinkItem = styled.a<FlexibleComponentProps>`
     color: ${p=>p.theme.grey1};
     transition: all .3s;
   }
-
-  // &:hover{
-  //   background-color: ${p=>p.theme.grey5};
-  //   color: ${p=>p.theme.grey1};
-
-  //   svg{
-  //     color: ${p=>p.theme.grey4};
-  //   }
-  // }
 `
 
 export const ButtonEmpty = styled.button<FlexibleComponentProps>`
@@ -84,8 +76,8 @@ export const ButtonEmpty = styled.button<FlexibleComponentProps>`
 
 `
 export const ButtonSecondary = styled.button<FlexibleComponentProps>`
-  min-width: 20rem;
-  margin: ${p=>p.margin?p.margin:' 1.4rem 2.7rem'};
+  min-width: 16rem;
+  margin: ${p=>p.margin?p.margin:' 1.4rem .9rem'};
   padding: .9rem 1.4rem;
   font-size: 1.9rem;
   text-transform: uppercase;
@@ -97,6 +89,8 @@ export const ButtonSecondary = styled.button<FlexibleComponentProps>`
   box-shadow: 0 1rem 1rem rgba(0,0,0,.3);
   transition: all .3s;
 
+  ${(p)=>respond('m',`min-width: 20rem; margin: ${p.margin?p.margin:' 1.4rem 2.7rem'};`)}
+
   &:hover{
     background-color: ${p=>p.theme.grey5};
     color: ${p=>p.theme.secondary};
@@ -105,8 +99,8 @@ export const ButtonSecondary = styled.button<FlexibleComponentProps>`
 `
 
 export const ButtonPrimary = styled.button<FlexibleComponentProps>`
-  min-width: 20rem;
-  margin: ${p=>p.margin?p.margin:' 1.4rem 2.7rem'};
+  min-width: 16rem;
+  margin: ${p=>p.margin?p.margin:' 1.4rem .9rem'};
   padding: .9rem 1.4rem;
   font-size: 1.9rem;
   text-transform: uppercase;
@@ -117,6 +111,8 @@ export const ButtonPrimary = styled.button<FlexibleComponentProps>`
   color: ${p=>p.theme.grey1};
   box-shadow: 0 1rem 1rem rgba(0,0,0,.3);
   transition: all .3s;
+
+  ${(p)=>respond('m',`min-width: 20rem; margin: ${p.margin?p.margin:' 1.4rem 2.7rem'};`)}
 
   &:hover{
     background-color: ${p=>p.theme.grey5};

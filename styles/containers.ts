@@ -16,7 +16,9 @@ export const ContainerNarrow = styled.div<FlexibleComponentProps>`
   margin: 0 2.7rem;
   padding: 1.4rem;
 
-  ${(p)=>respond('xxl', `max-width:1225px; margin:${p.margin?p.margin:'0 auto'} `)};
+  ${(p)=>respond('s',`margin:${p.margin?p.margin:'0 auto'}`)}
+
+  ${()=>respond('xxl', `max-width:1225px;`)};
 `
 export const Section = styled.section<FlexibleComponentProps>`
   margin: ${(p) =>p.margin?p.margin:"0 auto"};

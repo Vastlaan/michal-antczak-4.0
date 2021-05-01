@@ -10,7 +10,6 @@ export default function CategoriesComponent() {
   const [top, setTop] = useState({value: '-1200%', type: ''})
 
   function displaySubcategories(type: string){
-    console.log(type)
     setTop({
       value: '100%',
       type

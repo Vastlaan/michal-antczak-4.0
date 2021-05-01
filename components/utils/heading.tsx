@@ -24,7 +24,7 @@ const HeadingContainer = styled.div`
   justify-content: center;
 `
 const Line = styled.div`
-  width: 15rem;
+  width: 10rem;
   height: 1px;
   background-color: rgba(0,0,0,.3);
 

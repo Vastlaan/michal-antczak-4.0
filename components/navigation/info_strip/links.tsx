@@ -4,11 +4,9 @@ import {MdPinDrop, MdSearch} from 'react-icons/md'
 import {GiShoppingBag} from 'react-icons/gi'
 import {FlexRow, LinkSmall} from '../../../styles'
 
-interface InfoStripProps{
-  isSmall: boolean;
-}
 
-export default function LinksComponent({isSmall}:InfoStripProps) {
+
+export default function LinksComponent() {
 
   return (
     <FlexRow margin='0 0 0 auto'>
@@ -19,21 +17,17 @@ export default function LinksComponent({isSmall}:InfoStripProps) {
         </LinkSmall>
       </Link>
 
-      {!isSmall &&
-      <>
-       <Link href='/contact'>
-          <LinkSmall href='mailto:info@itcontext.nl' margin="0 1.9rem 0 0">
-            <MdPinDrop/>
-            Find Store
-          </LinkSmall>        
-        </Link> 
+      <Link href='/contact'>
+        <LinkSmall href='mailto:info@itcontext.nl' margin="0 1.9rem 0 0">
+          <MdPinDrop/>
+          Find Store
+        </LinkSmall>        
+      </Link> 
 
-        <SearchBox>
-          <MdSearch/>
-          <input type="text"/>
-        </SearchBox>
-      </>}
-     
+      <SearchBox>
+        <MdSearch/>
+        <input type="text"/>
+      </SearchBox>
     </FlexRow>
   )
 }

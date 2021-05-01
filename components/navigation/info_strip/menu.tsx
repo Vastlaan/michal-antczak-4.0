@@ -21,7 +21,7 @@ export default function MenuComponent({isOpen}:MenuProps) {
         <MenuLink>Women's collection</MenuLink>
       </Link>
       <Link href='/kids'>
-        <MenuLink>Kids's collection</MenuLink>
+        <MenuLink>Kids' collection</MenuLink>
       </Link>
       <Link href='/contact'>
         <MenuLink>Contact</MenuLink>

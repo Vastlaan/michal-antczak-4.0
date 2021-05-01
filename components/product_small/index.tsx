@@ -24,7 +24,7 @@ export default function ProductComponent({item}:ItemProps) {
         <ImageConatiner>
           <Image src={item.image} alt={item.displayName} layout='fill' objectFit='cover' />
         </ImageConatiner>
-        <TextItalic align='left'>for {item.category}</TextItalic>
+        <TextItalic align='left'>for {item.category.split('-')[0]}</TextItalic>
         <TextBold align='left'>{item.displayName}</TextBold>
         <TextBold align='left' size='1.9rem'>{item.price.toFixed(2)}</TextBold>
       </ProductShort>
