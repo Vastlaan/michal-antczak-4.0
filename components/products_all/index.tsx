@@ -1,5 +1,3 @@
-import Link from 'next/link';
-import styled from 'styled-components';
 import Product from '../product_small'
 import { SectionNarrow, ProductsConatiner} from '../../styles'
 import {ProductProps} from '../../types'
@@ -8,7 +6,7 @@ import Heading from '../utils/heading'
 interface ProductsShortProps{
   category: string;
   products: ProductProps[]
-  link: string
+  link?: string
 }
 
 export default function ProductsShortComponent({category, products, link}:ProductsShortProps) {

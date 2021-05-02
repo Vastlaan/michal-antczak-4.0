@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import {TextBold,TextItalic} from '../../styles'
 import {ProductProps} from '../../types'
+import {countFinalPriceOfSingleProduct} from '../../utils'
 
 interface ItemProps{
   item: ProductProps
@@ -18,6 +19,7 @@ export default function ProductComponent({item}:ItemProps) {
   })
   url += item.group
 
+
   return (
     <Link href={url}>
       <ProductShort>
@@ -26,7 +28,7 @@ export default function ProductComponent({item}:ItemProps) {
         </ImageConatiner>
         <TextItalic align='left'>for {item.category.split('-')[0]}</TextItalic>
         <TextBold align='left'>{item.displayName}</TextBold>
-        <TextBold align='left' size='1.9rem'>{item.price.toFixed(2)}</TextBold>
+        <TextBold align='left' size='1.9rem'>{countFinalPriceOfSingleProduct(item)}</TextBold>
       </ProductShort>
     </Link>
   )
@@ -59,7 +61,7 @@ const ProductShort = styled.div`
 
 const ImageConatiner = styled.div`
   position: relative;
-  width: 25rem;
-  min-height: 25rem;
+  width: 26rem;
+  min-height: 15rem;
   overflow:hidden;
 `

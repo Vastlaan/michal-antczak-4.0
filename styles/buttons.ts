@@ -31,6 +31,19 @@ export const LinkSmall = styled.a<FlexibleComponentProps>`
     }
   }
 `
+export const LinkExtra = styled.p<FlexibleComponentProps>`
+  margin: ${p=>p.margin?p.margin:'0'};
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: ${(p)=>p.color?p.color:p.theme.grey4};
+  max-width: ${(p)=>p.wide?'65rem':'45rem'};
+  text-align: ${p=>p.align?p.align:'center'};
+  cursor: pointer;
+
+  &:hover{
+    color: ${p=>p.theme.primary};
+  }
+`
 export const LinkItem = styled.a<FlexibleComponentProps>`
   text-decoration: none;
   display: flex;

@@ -1,6 +1,6 @@
 import Header from '../header'
 import Categories from '../categories'
-import Products from '../products'
+import Products from '../products_all'
 import Subscribe from '../subscribe'
 
 import {categories} from '../../database_development' // this will be passed as prop from CMS

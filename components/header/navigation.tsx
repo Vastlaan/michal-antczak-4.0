@@ -25,11 +25,15 @@ export default function NavigationComponent() {
                         <Path><BsChevronRight/>{path}</Path>
                     </Link>
                 )
-            }else{
+            }else if(i===2){
                 return(
                     <Link href={`/${pathArray[1]}/${pathArray[2]}`} key={i}>
-                        <Path><BsChevronRight/>{path}</Path>
+                        <Path><BsChevronRight/>{path.split('_').join(" ")}</Path>
                     </Link>
+                )
+            }else{
+                return(
+                    <Path key={i}><BsChevronRight/>{path.split('%20').join(" ")}</Path>
                 )
             }
         })}

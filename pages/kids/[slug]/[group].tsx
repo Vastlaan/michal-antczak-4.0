@@ -1,6 +1,7 @@
 import {useRouter} from 'next/router'
 import Layout from '../../../layouts/main'
-import Category from '../../../components/category_page'
+import Product from '../../../components/product_page'
+import ProductsShort from '../../../components/products_short'
 
 import {categories} from '../../../database_development' // this will be passed as prop from CMS
 import {products} from '../../../database_development'   // this will be passed as prop from CMS
@@ -16,9 +17,12 @@ export default function ProductPage({group}) {
   const targetProducts = products.filter(prod=>prod.group===group)
   const currentCategory = categories.find(cat=>cat.link===path)
 
+  const promotedProducts = products.filter(prod=>prod.isPromoted)
+
   return (
     <Layout>
-      <Category products={targetProducts} category={currentCategory} />
+      <Product products={targetProducts} category={currentCategory} />
+      <ProductsShort category='Bestsellers' products={promotedProducts} link='/bestsellers' /> 
     </Layout>
   )
 }

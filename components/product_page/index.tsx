@@ -1,19 +1,19 @@
 import Header from '../header'
-import Products from '../products_all'
+import Product from '../product_main'
 import Subscribe from '../subscribe'
 import {ProductProps, CategoryProps} from '../../types'
 
-interface CategoryPageProps{
+interface ProductPageProps{
   products: ProductProps[];
   category: CategoryProps;
 }
 
-export default function CategoryPage({products, category}:CategoryPageProps){
+export default function ProductPage({products, category}:ProductPageProps){
 
   return (
     <>
       <Header title={category.displayName} body={`Grand collection of men's shoes`} image={`/img/header-1.jpg`}/>
-      <Products category={category.displayName} products={products} link='/' />
+      <Product category={category.displayName} products={products} link='/' />
       <Subscribe/>
     </>
   )

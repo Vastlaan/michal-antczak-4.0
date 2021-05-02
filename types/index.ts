@@ -5,14 +5,18 @@ export interface ProductProps{
   category: string;
   group: string;        // actual product's family includes all variations of colors and sizes
   displayName: string;  // usually the same as group
+  description: string;
   price: number;
   color: string;        // hex value
   size: string;
   image: string;
   stock: number;
+  tax: number;
+  reviews: {review: string, rate: number}[];
   isPromoted: boolean;
   isNew: boolean;
   discount: number | null;     // for example 0.2  === 20%
+
 }
 
 export interface CategoryProps{
