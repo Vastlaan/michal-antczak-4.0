@@ -1,11 +1,10 @@
 import {useRouter} from 'next/router'
 import Layout from '../../../layouts/main'
 import Category from '../../../components/category_page'
+import {SlugPageProps} from '../../../types'
+import {getProducts, getCategories} from '../../../database'
 
-import {categories} from '../../../database_development' // this will be passed as prop from CMS
-import {products} from '../../../database_development'   // this will be passed as prop from CMS
-
-export default function CategoryPage({slug}) {
+export default function CategoryPage({slug, products, categories}: SlugPageProps) {
 
   const router = useRouter()
   const {asPath} = router
@@ -23,8 +22,11 @@ export default function CategoryPage({slug}) {
 export async function getServerSideProps(ctx){
   const {params : {slug} } = ctx
 
+  const products = await getProducts()
+  const categories = await getCategories()
+
   return{
-    props: {slug}
+    props: {slug, products, categories}
   }
 
 }

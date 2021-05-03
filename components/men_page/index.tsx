@@ -2,21 +2,15 @@ import Header from '../header'
 import Categories from '../categories'
 import Products from '../products_all'
 import Subscribe from '../subscribe'
+import {CategoryPageProps} from '../../types'
 
-import {categories} from '../../database_development' // this will be passed as prop from CMS
-import {products} from '../../database_development'   // this will be passed as prop from CMS
-
-
-export default function MenPage(){
-
-  const targetProducts = products.filter(prod=>prod.category.split('-')[0] === 'men')
-  const targetCategories = categories.filter(cat=>cat.parent==='men')
+export default function MenPage({products, categories}: CategoryPageProps){
 
   return (
     <>
       <Header title={`Men's collection`} body={`Grand collection of men's shoes`} image={`/img/header-5.jpg`}/>
-      <Categories categories={targetCategories} />
-      <Products category="Men's shoes" products={targetProducts} link='/' />
+      <Categories categories={categories} />
+      <Products category="Men's shoes" products={products} link='/' />
       <Subscribe/>
     </>
   )

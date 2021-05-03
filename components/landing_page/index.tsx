@@ -6,9 +6,9 @@ import Parallax from '../parallax'
 import SocialMedia from '../social_media'
 import {MdCall} from 'react-icons/md'
 
-import {products} from '../../database_development'   // this will be passed as prop from CMS
+// import {products} from '../../database_development'   // this will be passed as prop from CMS
 
-export default function LandingPage(){
+export default function LandingPage({products}){
 
   const newProducts = products.filter(prod=>prod.isNew)
   const promotedProducts = products.filter(prod=>prod.isPromoted)

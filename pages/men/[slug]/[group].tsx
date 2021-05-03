@@ -2,11 +2,10 @@ import {useRouter} from 'next/router'
 import Layout from '../../../layouts/main'
 import Product from '../../../components/product_page'
 import ProductsShort from '../../../components/products_short'
+import {GroupPageProps} from '../../../types'
+import {getProducts, getCategories} from '../../../database'
 
-import {categories} from '../../../database_development' // this will be passed as prop from CMS
-import {products} from '../../../database_development'   // this will be passed as prop from CMS
-
-export default function ProductPage({group}) {
+export default function ProductPage({group, products, categories}: GroupPageProps) {
 
   const router = useRouter()
   const {asPath} = router
@@ -29,9 +28,11 @@ export default function ProductPage({group}) {
 
 export async function getServerSideProps(ctx){
   const {params : {group} } = ctx
+  const products = await getProducts()
+  const categories = await getCategories()
 
   return{
-    props: {group}
+    props: {group, products, categories}
   }
 
 }

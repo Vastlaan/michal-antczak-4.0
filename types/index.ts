@@ -28,6 +28,27 @@ export interface CategoryProps{
   image: string | null;
 }
 
+export interface CategoryPageProps{
+  categories: CategoryProps[];
+  products: ProductProps[]
+}
+export interface GroupPageProps{
+  categories: CategoryProps[];
+  products: ProductProps[];
+  group: string;
+}
+export interface SlugPageProps{
+  categories: CategoryProps[];
+  products: ProductProps[];
+  slug: string;
+}
+export interface BestsellersProps{
+  products: ProductProps[]
+}
+export interface NewProps{
+  products: ProductProps[]
+}
+
 export interface ThemeProps extends DefaultTheme {
   theme: {
     primary?: string,
