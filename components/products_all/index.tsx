@@ -14,7 +14,7 @@ export default function ProductsShortComponent({category, products, link}:Produc
   const items = []    // think about paginations
 
    products.map(prod=>{
-    if(items.filter(item=>item.group===prod.group).length === 0){
+    if(items.filter(item=>item.productGroup===prod.productGroup).length === 0){
       items.push(prod)
     }
   })

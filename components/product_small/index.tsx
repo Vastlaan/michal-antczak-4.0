@@ -17,7 +17,7 @@ export default function ProductComponent({item}:ItemProps) {
   slugsArray.forEach(slug=>{
     url += `${slug}/`
   })
-  url += item.group
+  url += item.productGroup
 
 
   return (

@@ -14,7 +14,7 @@ export default function WomenPage(){
 
   return (
     <>
-      <Header title={`Ladies collection`} body={`Grand collection of women's shoes`} image={`/img/header-1.jpg`}/>
+      <Header title={`Ladies collection`} body={`Grand collection of women's shoes`} image={`/img/header-6.jpg`}/>
       <Categories categories={targetCategories} />
       <Products category="Women's shoes" products={targetProducts} link='/' />
       <Subscribe/>

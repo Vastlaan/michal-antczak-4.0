@@ -1,6 +1,5 @@
 import {useEffect, useRef} from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
 import gsap from 'gsap'
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
 import { Heading1, TextBold, ButtonPrimary } from "../../styles";
@@ -9,11 +8,13 @@ import {FlexibleComponentProps} from '../../types'
 interface ParallaxProps{
   title?: string;
   body?: string;
-  btn: string;
-  link: string
+  btn?: string;
+  link?: string;
+  icon?: JSX.Element;
+  image?: string;
 }
 
-export default function ParallaxBackground({ title, body, btn, link }: ParallaxProps) {
+export default function ParallaxBackground({ title, body, btn, link,icon, image }: ParallaxProps) {
 
     const target = useRef()
 
@@ -27,7 +28,7 @@ export default function ParallaxBackground({ title, body, btn, link }: ParallaxP
     },[])
 
     return (
-        <BilboardContainer ref={target}>
+        <BilboardContainer ref={target} url={image}>
             <Heading1>
                 {title
                     .split(" ")
@@ -38,9 +39,10 @@ export default function ParallaxBackground({ title, body, btn, link }: ParallaxP
             <TextBold wide='65rem' align="center" margin='2.7rem 0' color='white'>
                 {body}
             </TextBold>
-            <a href={link}>
-                  <ButtonPrimary>{btn}</ButtonPrimary>
-            </a>
+            {link &&  <a href={link}>
+                  <ButtonPrimary>{icon} {btn}</ButtonPrimary>
+            </a>}
+           
         </BilboardContainer>
     );
 }

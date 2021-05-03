@@ -14,7 +14,7 @@ export default function ProductPage({group}) {
   tempArray.pop()
   const path = tempArray.join('/')
 
-  const targetProducts = products.filter(prod=>prod.group===group)
+  const targetProducts = products.filter(prod=>prod.productGroup===group)
   const currentCategory = categories.find(cat=>cat.link===path)
 
   const promotedProducts = products.filter(prod=>prod.isPromoted)

@@ -14,7 +14,7 @@ export default function MenPage(){
 
   return (
     <>
-      <Header title={`Kids' collection`} body={`Amazing and modern designed shoes for children`} image={`/img/header-1.jpg`}/>
+      <Header title={`Kids' collection`} body={`Amazing and modern designed shoes for children`} image={`/img/header-4.jpg`}/>
       <Categories categories={targetCategories} />
       <Products category="Kids' shoes" products={targetProducts} link='/' />
       <Subscribe/>

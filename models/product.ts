@@ -5,7 +5,7 @@ export default class Product implements ProductProps{
 
   id: string;
   category: string;     
-  group: string;        // actual product's family includes all variations of colors and sizes
+  productGroup: string;        // actual product's family includes all variations of colors and sizes
   displayName: string;  // usually the same as group
   description: string;
   price: number;
@@ -23,7 +23,7 @@ export default class Product implements ProductProps{
   constructor(category:string, group: string, displayName: string, description:string, price: number, color: string, image:string, size:string, stock: number, tax: number, isPromoted?: boolean, isNew?: boolean, discount?: number){
     this.id = uuid();
     this.category = category
-    this.group = group
+    this.productGroup = group
     this.displayName = displayName
     this.description = description
     this.price = price

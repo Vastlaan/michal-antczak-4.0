@@ -12,7 +12,7 @@ export default function ProductPage({products, category}:ProductPageProps){
 
   return (
     <>
-      <Header title={category.displayName} body={`Grand collection of men's shoes`} image={`/img/header-1.jpg`}/>
+      <Header title={category.displayName} body={``} image={category.image}/>
       <Product category={category.displayName} products={products} link='/' />
       <Subscribe/>
     </>

@@ -17,7 +17,7 @@ export default function ProductsShortComponent({category, products, link}:Produc
 
   // this will filter products based on parent component and amount of items to display (max 6)
   products.map(prod=>{
-    if(items.filter(item=>item.group===prod.group).length === 0 && items.length < 6){
+    if(items.filter(item=>item.productGroup===prod.productGroup).length === 0 && items.length < 6){
       items.push(prod)
     }
   }) 

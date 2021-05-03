@@ -1,7 +1,6 @@
 import Header from '../header'
 import Products from '../products_all'
 import Subscribe from '../subscribe'
-import BackgroundVideo from '../video_background'
 
 import {products} from '../../database_development'   // this will be passed as prop from CMS
 

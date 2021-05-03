@@ -115,6 +115,9 @@ export const ButtonPrimary = styled.button<FlexibleComponentProps>`
   min-width: 16rem;
   margin: ${p=>p.margin?p.margin:' 1.4rem .9rem'};
   padding: .9rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.9rem;
   text-transform: uppercase;
   font-family: ${fonts.heading};
@@ -126,6 +129,11 @@ export const ButtonPrimary = styled.button<FlexibleComponentProps>`
   transition: all .3s;
 
   ${(p)=>respond('m',`min-width: 20rem; margin: ${p.margin?p.margin:' 1.4rem 2.7rem'};`)}
+
+  svg{
+    margin-right: 1.4rem;
+    font-size: 2.7rem;
+  }
 
   &:hover{
     background-color: ${p=>p.theme.grey5};

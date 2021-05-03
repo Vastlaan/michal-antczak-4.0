@@ -3,7 +3,7 @@ import {  DefaultTheme } from 'styled-components'
 export interface ProductProps{
   id: string;
   category: string;
-  group: string;        // actual product's family includes all variations of colors and sizes
+  productGroup: string;        // actual product's family includes all variations of colors and sizes
   displayName: string;  // usually the same as group
   description: string;
   price: number;
@@ -25,6 +25,7 @@ export interface CategoryProps{
   parent: string | null;
   displayName: string;
   link: string;
+  image: string | null;
 }
 
 export interface ThemeProps extends DefaultTheme {

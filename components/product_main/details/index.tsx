@@ -46,18 +46,18 @@ export default function DetailsComponent({products}:DetailsProps) {
 
   return (
     <Details>
-      <TextBold align='left'>Sizes:</TextBold>
+      <TextBold align='left'>Select Size:</TextBold>
       <FlexRow justify='flex-start'>
-        {availableSizes.map((size,i)=><Size key={`size-${i}`}  onClick={()=>setChosenSize(size)} highlight={size===chosenSize}>{size}</Size>)}
+        {availableSizes.map((size,i)=><Size key={`size-${i}`}  onClick={()=>setChosenSize(prevState=> prevState===size?null:size)} highlight={size===chosenSize}>{size}</Size>)}
       </FlexRow>
       <Link href='/contact'>
         <LinkExtra align='left' color='#4d5057' margin="0 0 1.4rem 0">
           What is my shoe size?
         </LinkExtra>        
       </Link> 
-      <TextBold align='left'>Colors:</TextBold>
+      <TextBold align='left'>Select color:</TextBold>
       <FlexRow justify='flex-start'>
-        {availableColors.map((color,i)=><Color key={`color-${i}`} onClick={()=>setChosenColor(color)} color={color} highlight={color===chosenColor}/>)}
+        {availableColors.map((color,i)=><Color key={`color-${i}`} onClick={()=>setChosenColor(prevState=> prevState===color?null:color)} color={color} highlight={color===chosenColor}/>)}
       </FlexRow>
       <FlexRow justify='flex-start'>
         <Price>
