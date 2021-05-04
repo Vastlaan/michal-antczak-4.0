@@ -18,3 +18,14 @@ export function countFinalPriceOfSingleProduct(item:ProductProps){
   }
   return price.toFixed(2)
 } 
+
+export function buildUrlForGivenProduct(item:ProductProps){
+  // build url path to specific product (group)
+  const slugsArray = item.category.split('-')
+  let url = '/'
+  slugsArray.forEach(slug=>{
+    url += `${slug}/`
+  })
+  url += item.productGroup
+  return url
+}

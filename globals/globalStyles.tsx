@@ -14,12 +14,14 @@ const StylesConatiner = createGlobalStyle<ThemeProps>`
       padding: 0;
       box-sizing: inherit;
       line-height: inherit;
-      ::-moz-scrollbar-width: none;
+      ::-moz-scrollbar-width: thin;
       font-family: inherit;
       
       
   }
-  ::-webkit-scrollbar{display: none;}
+  &::-webkit-scrollbar{display: block; width: 7px;}
+  &::-webkit-scrollbar-track { background: ${p=>p.theme.grey5};}
+  &::-webkit-scrollbar-thumb { background: ${p=>p.theme.grey2};  }
   html{
       font-size: 50%;
       box-sizing: border-box;
@@ -61,5 +63,9 @@ const StylesConatiner = createGlobalStyle<ThemeProps>`
         box-shadow: 0 0 5px ${(p) => p.theme.primary};
       }
       color: ${(p) => p.theme.grey4}
+  }
+  small{
+      color: ${p=>p.theme.primary};
+      font-size: 1.4rem;
   }
 `;

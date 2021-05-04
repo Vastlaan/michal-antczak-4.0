@@ -3,7 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import gsap from "gsap";
 import { fonts} from "../../styles";
-import {ThemeProps,FlexibleComponentProps} from '../../types'
+import {FlexibleComponentProps} from '../../types'
 
 export default function CookieStatementComponent() {
     const target = useRef();
@@ -49,6 +49,7 @@ const CookiesStatement = styled.section`
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 99;
     padding: 1.4rem 2.7rem;
     background-color: ${(p) => p.theme.grey5};
     transform: translateY(100%);

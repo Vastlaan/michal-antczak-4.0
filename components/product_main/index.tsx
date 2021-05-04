@@ -42,18 +42,32 @@ const Grid = styled.div`
   margin: 2.7rem 0;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas: 
+    "image"
+    "details"
+    "info";
   grid-gap: 2.7rem;
 
-  ${()=>respond('m','grid-template-columns: 25rem 1fr;')}
-  ${()=>respond('l','grid-template-columns: 25rem 1fr 25rem;')}
+  ${()=>respond('m',`
+    grid-template-columns: 25rem 1fr;
+    grid-template-areas: 
+    "info image"
+    "details details";
+  `)}
+  ${()=>respond('l',`
+    grid-template-columns: 25rem 1fr 25rem;
+    grid-template-areas: 
+    "info image details";
+  `)}
 `
 
 const ImageContainer = styled.div`
   position: relative;
-  width: 45rem;
-  min-height: 35rem;
-  margin: 0;
+  width: calc(100vw - 2.8rem);
+  min-height: 30rem;
+  margin: 0 auto;
+  grid-area: image;
 
-  ${()=>respond('m','margin: 0 auto;')}
+  ${()=>respond('m','margin: 0 auto; width: 55rem;min-height: 35rem;')}
 
 `

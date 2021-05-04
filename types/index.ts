@@ -48,7 +48,9 @@ export interface BestsellersProps{
 export interface NewProps{
   products: ProductProps[]
 }
-
+export interface ColorSizeProps extends FlexibleComponentProps{
+  highlight?:boolean
+}
 export interface ThemeProps extends DefaultTheme {
   theme: {
     primary?: string,
@@ -78,4 +80,20 @@ export interface FlexibleComponentProps{
   minHeight?:string;
   wrap?:string;
   top?:string
+}
+
+export interface Payload {
+  item: ProductProps;
+  quantity: number
+}
+export interface State{
+  cart:  Payload[],
+}
+export interface Action{
+  type: string;
+  payload: ProductProps
+}
+export type IContext = { state: State; dispatch?: React.Dispatch<Action>; }
+export const initialState : State = {
+  cart: []
 }

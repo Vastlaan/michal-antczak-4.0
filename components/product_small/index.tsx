@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import {TextBold,TextItalic} from '../../styles'
 import {ProductProps} from '../../types'
-import {countFinalPriceOfSingleProduct} from '../../utils'
+import {countFinalPriceOfSingleProduct, buildUrlForGivenProduct} from '../../utils'
 
 interface ItemProps{
   item: ProductProps
@@ -11,14 +11,7 @@ interface ItemProps{
 
 export default function ProductComponent({item}:ItemProps) {
 
-  // build url path to specific product (group)
-  const slugsArray = item.category.split('-')
-  let url = '/'
-  slugsArray.forEach(slug=>{
-    url += `${slug}/`
-  })
-  url += item.productGroup
-
+  const url = buildUrlForGivenProduct(item)
 
   return (
     <Link href={url}>

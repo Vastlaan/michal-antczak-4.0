@@ -24,13 +24,13 @@ export default function InfoComponent({product}:InfoProps) {
           </Back>
         </Link>
       </FlexRow>
-      <TextBold align='left' margin='0 0 1.4rem 0'>Category:</TextBold>
-      <Text align='left'>{parentCategory} - {currentCategory.split('_').join(" ")}</Text>
-      <TextBold align='left' margin='0 0 1.4rem 0'>Description:</TextBold>
+      <TextBold align='left' >Category:</TextBold>
+      <Text align='left' margin='1.4rem 0'>{parentCategory} - {currentCategory.split('_').join(" ")}</Text>
+      <TextBold align='left'>Specification:</TextBold>
       <Text align='left' margin=' 1.4rem 0 2.7rem 0'>{product.description}</Text>
       <FlexCol align='flex-start'>
-        <TextBold align='left' margin='0 0 1.4rem 0'>Rating:</TextBold>
-        <FlexRow align='flex-start'>
+        <TextBold align='left'>Rating:</TextBold>
+        <FlexRow align='flex-start' margin='1.4rem 0'>
           {overallRating > 0? <Rating>{overallRating.toFixed(1)}</Rating>: <TextItalic align='left' color='#888'>This product has no reviews yet</TextItalic>}
         </FlexRow>
       </FlexCol>
@@ -40,6 +40,7 @@ export default function InfoComponent({product}:InfoProps) {
 const Info = styled.div`
   display: flex;
   flex-direction: column;
+  grid-area: info;
 
 `
 const Back = styled.div`
