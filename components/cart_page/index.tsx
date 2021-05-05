@@ -5,7 +5,7 @@ export default function CartPageComponent() {
 
   return (
     <>
-      <Header title={`Shopping Cart`} body={`Good shoes take you to good places`} image={`/img/header-1.jpg`} />
+      <Header title={`Shopping Cart`} body={`Good shoes take you to good places`} image={`/img/header-7.jpg`} />
       <Cart />
     </>
   )

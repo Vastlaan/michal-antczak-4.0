@@ -34,6 +34,7 @@ export const FlexRow = styled.div<FlexibleComponentProps>`
   background-color: ${p=>p.background?p.background:'transparent'};
   max-width: ${p=>p.wide?p.wide: 'auto'};
   flex-wrap: ${p=>p.wrap?p.wrap:'wrap'};
+  width: ${p=>p.wide?p.wide: 'auto'};
 `
 export const FlexCol = styled.div<FlexibleComponentProps>`
   display:flex;
@@ -52,4 +53,26 @@ export const ProductsConatiner = styled.div`
     justify-content: center;
 
     ${()=>respond('m', 'flex-direction: row; flex-wrap: wrap;')}
+`
+export const Field = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 1.9rem 1.9rem 1.9rem 0;
+
+  label{
+    font-size: 1.9rem;
+
+    sup{
+      color: ${p=>p.theme.primary};
+    }
+  }
+  input{
+    border: 1px solid rgba(0,0,0,.3);
+    margin: .9rem 0;
+    padding: .9rem 2.7rem;
+    min-width: 25rem;
+    font-size: 1.6rem;
+    color: ${p=>p.theme.grey4};
+  }
+
 `

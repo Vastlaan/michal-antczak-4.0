@@ -1,4 +1,4 @@
-import {ProductProps} from '../types'
+import {ProductProps, Payload} from '../types'
 
 
 export function checkViewportWidth(breakpoint:number){
@@ -30,7 +30,7 @@ export function buildUrlForGivenProduct(item:ProductProps){
   return url
 }
 
-export function storeCartInLocalStorage(cart){
+export function storeCartInLocalStorage(cart: Payload[]){
   window.localStorage.setItem('goldenshoecart', JSON.stringify(cart))
 }
 export function retrieveCartFromLocalStorage(){

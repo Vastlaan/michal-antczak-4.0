@@ -21,8 +21,11 @@ export default function Cart() {
 
   return (
     <SectionNarrow>
-      <Heading text='Shopping Cart' />
+
       <Back/>
+      
+      <Heading text='Shopping Cart' />
+      
       <CartGrid>
 
         <FlexCol align='flex-start'>

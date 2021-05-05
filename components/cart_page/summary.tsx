@@ -18,7 +18,9 @@ export default function SummaryComponent() {
         &pound;{totalPrice.toFixed(2)}
       </Price>
       <Text>*price includes taxes</Text>
-      <CustomPrimaryButton>Order</CustomPrimaryButton>
+      <Link href='/checkout'>
+        <CustomPrimaryButton>Order</CustomPrimaryButton>
+      </Link>
     </Summary>
   )
 }
