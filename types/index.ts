@@ -91,9 +91,7 @@ export interface State{
 }
 export interface Action{
   type: string;
-  payload: ProductProps
+  payload?: ProductProps
+  cart?: Payload[]
 }
 export type IContext = { state: State; dispatch?: React.Dispatch<Action>; }
-export const initialState : State = {
-  cart: []
-}

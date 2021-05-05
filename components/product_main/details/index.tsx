@@ -6,7 +6,8 @@ import Size from './size'
 import Color from './color'
 import Price from './price'
 import { FlexRow,  ButtonSecondary} from '../../../styles'
-import {ProductProps, FlexibleComponentProps} from '../../../types'
+import {ProductProps} from '../../../types'
+import {storeCartInLocalStorage} from '../../../utils'
 
 interface DetailsProps{
   products: ProductProps[]
@@ -63,6 +64,8 @@ export default function DetailsComponent({products}:DetailsProps) {
     const chosenProduct = products.find((prod)=>prod.size===chosenSize && prod.color===chosenColor)
 
     dispatch({type: 'addProductToCart', payload: chosenProduct})
+
+    storeCartInLocalStorage(state.cart)
 
     return router.push('/cart')
   }

@@ -1,21 +1,28 @@
-import { useContext} from 'react'
+import { useContext, useEffect} from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
 import {Context} from '../../store'
 import Heading from '../utils/heading'
 import Item from './item'
 import Summary from './summary'
-import { SectionNarrow, FlexRow, FlexCol, TextBold, ButtonPrimary, respond} from '../../styles'
+import Back from '../utils/go_back_button'
+import { SectionNarrow, FlexCol, TextBold, respond} from '../../styles'
+import {retrieveCartFromLocalStorage} from '../../utils'
 
 
 export default function Cart() {
 
-  const { state } = useContext(Context);
+  const { state, dispatch } = useContext(Context);
+
+  useEffect(()=>{
+      if(typeof window !== undefined){
+          dispatch({type:'updateCart', cart: retrieveCartFromLocalStorage()})
+      }
+  },[])
 
   return (
     <SectionNarrow>
       <Heading text='Shopping Cart' />
-
+      <Back/>
       <CartGrid>
 
         <FlexCol align='flex-start'>

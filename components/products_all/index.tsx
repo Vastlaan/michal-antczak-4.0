@@ -2,6 +2,7 @@ import Product from '../product_small'
 import { SectionNarrow, ProductsConatiner} from '../../styles'
 import {ProductProps} from '../../types'
 import Heading from '../utils/heading'
+import Back from '../utils/go_back_button'
 
 interface ProductsShortProps{
   category: string;
@@ -22,6 +23,8 @@ export default function ProductsShortComponent({category, products, link}:Produc
   return (
     <SectionNarrow margin='0 auto 2.7rem auto'>
 
+      <Back/>
+      
       <Heading text={category} />
 
       <ProductsConatiner>

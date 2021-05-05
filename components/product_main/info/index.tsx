@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import Link from 'next/link'
 import { FlexRow, FlexCol, Text, TextItalic, TextBold,} from '../../../styles'
-import {MdArrowBack} from 'react-icons/md'
+import Back from '../../utils/go_back_button'
 import {ProductProps} from '../../../types'
 
 interface InfoProps{
@@ -17,12 +16,7 @@ export default function InfoComponent({product}:InfoProps) {
   return (
     <Info>
       <FlexRow>
-        <Link href={`/${parentCategory}/${currentCategory}`}>
-          <Back>
-            <MdArrowBack/>
-            Go Back
-          </Back>
-        </Link>
+        <Back />
       </FlexRow>
       <TextBold align='left' >Category:</TextBold>
       <Text align='left' margin='1.4rem 0'>{parentCategory} - {currentCategory.split('_').join(" ")}</Text>
@@ -42,32 +36,6 @@ const Info = styled.div`
   flex-direction: column;
   grid-area: info;
 
-`
-const Back = styled.div`
-  margin: 0 auto 1.4rem 0;
-  font-size: 1.9rem;
-  display: flex;
-  align-items: center;
-  color: ${p=>p.theme.primary};
-  cursor: pointer;
-  transition: all .1s;
-
-  svg{
-    font-size: 2.7rem;
-    border: 2px solid ${p=>p.theme.primary};
-    border-radius: 50%;
-    margin-right: 1.4rem;
-    transition: all .1s;
-  }
-
-  &:hover{
-    color: ${p=>p.theme.grey3};
-     svg{
-
-      border: 2px solid ${p=>p.theme.grey3};
-
-    }
-  }
 `
 const Rating = styled.div`
   padding: .9rem;

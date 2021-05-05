@@ -37,6 +37,7 @@ const StylesConatiner = createGlobalStyle<ThemeProps>`
   body{
       overflow-x: hidden;
       background-color: ${(p) => p.theme.grey1};
+      height: 100%;
   }
   h1,h2,h3,h4,h5,h6{
     font-family: ${fonts.heading};

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import { respond, FlexRow, TextBold, Text} from '../../styles'
-import {buildUrlForGivenProduct, countFinalPriceOfSingleProduct} from '../../utils'
+import {buildUrlForGivenProduct, countFinalPriceOfSingleProduct, storeCartInLocalStorage} from '../../utils'
 import {ColorSizeProps} from '../../types'
 import {BsTrash} from 'react-icons/bs'
 
@@ -14,6 +14,12 @@ export default function ItemComponent({item}) {
   const url = buildUrlForGivenProduct(item.item)
 
   const { state, dispatch } = useContext(Context);
+
+  function deleteItem(item){
+    dispatch({type: 'removeItemFromCart', payload: item})
+    console.log(state.cart)
+    storeCartInLocalStorage(state.cart)
+  }
 
   return (
     <Item>
@@ -38,10 +44,15 @@ export default function ItemComponent({item}) {
           <Text>Price:{" "}&pound;{countFinalPriceOfSingleProduct(item.item)}</Text>
         </FlexRow>
         <FlexRow>
-          <Text>Quantity:{" "}{item.quantity}</Text>
+          <Text>Quantity:</Text>
+          <QuantityButtons>
+            <button onClick={()=>dispatch({type:'reduceAmountInCart', payload:item.item})}>-</button>
+            <Text>{item.quantity}</Text>
+            <button onClick={()=>dispatch({type:'increaseAmountInCart', payload:item.item})}>+</button>
+          </QuantityButtons>
         </FlexRow>
       </Details>
-      <Delete onClick={()=>dispatch({type: 'removeItemFromCart', payload: item.item})}>
+      <Delete onClick={()=>deleteItem(item.item)}>
         <BsTrash/>
       </Delete>
     </Item>
@@ -103,4 +114,26 @@ const Delete = styled.div`
   top: 29.8rem;
 
   ${()=>respond('s', 'position: static;')}
+`
+
+const QuantityButtons = styled.div`
+  display: flex;
+
+  button{
+    margin: 0 1.4rem;
+    padding: 0 .9rem;
+    background-color: transparent;
+    border: 1px solid rgba(0,0,0,.3);
+    color: ${p=>p.theme.grey4};
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1;
+    transition: all .3s;
+
+    &:hover{
+      background-color: ${p=>p.theme.grey4};
+      color: ${p=>p.theme.grey1};
+    }
+  }
 `

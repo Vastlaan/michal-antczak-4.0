@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import {Context} from '../../store'
 import {countFinalPriceOfSingleProduct} from '../../utils'
-import { respond, TextBold, ButtonPrimary} from '../../styles'
+import { respond, TextBold, Text, ButtonPrimary} from '../../styles'
 
 export default function SummaryComponent() {
 
@@ -15,8 +15,9 @@ export default function SummaryComponent() {
      <Summary>
       <TextBold align='center' margin='1.4rem'>Total Price:</TextBold>
       <Price>
-        &pound;{totalPrice}
+        &pound;{totalPrice.toFixed(2)}
       </Price>
+      <Text>*price includes taxes</Text>
       <CustomPrimaryButton>Order</CustomPrimaryButton>
     </Summary>
   )

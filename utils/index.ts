@@ -29,3 +29,11 @@ export function buildUrlForGivenProduct(item:ProductProps){
   url += item.productGroup
   return url
 }
+
+export function storeCartInLocalStorage(cart){
+  window.localStorage.setItem('goldenshoecart', JSON.stringify(cart))
+}
+export function retrieveCartFromLocalStorage(){
+  const cart = window.localStorage.getItem('goldenshoecart')
+  return cart ? JSON.parse(cart) : []
+}
