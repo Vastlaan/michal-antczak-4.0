@@ -19,7 +19,7 @@ export default function ProductPage({group, products, categories}: GroupPageProp
   const promotedProducts = products.filter(prod=>prod.isPromoted)
 
   return (
-    <Layout>
+    <Layout categories={categories}>
       <Product products={targetProducts} category={currentCategory} />
       <ProductsShort category='Bestsellers' products={promotedProducts} link='/bestsellers' /> 
     </Layout>

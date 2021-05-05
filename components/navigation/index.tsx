@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import InfoStrip from './info_strip'
 import Links from './links'
-import {} from '../../styles'
+import {NavigationProps} from '../../types'
 
-export default function NavigationComponent() {
+export default function NavigationComponent({categories}:NavigationProps) {
   return (
     <Navigation>
       <InfoStrip/>
-      <Links/>
+      <Links categories={categories}/>
     </Navigation>
   )
 }

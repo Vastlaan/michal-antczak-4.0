@@ -27,7 +27,9 @@ export interface CategoryProps{
   link: string;
   image: string | null;
 }
-
+export interface NavigationProps{
+  categories?: CategoryProps[]
+}
 export interface CategoryPageProps{
   categories: CategoryProps[];
   products: ProductProps[]
@@ -44,9 +46,11 @@ export interface SlugPageProps{
 }
 export interface BestsellersProps{
   products: ProductProps[]
+  categories?: CategoryProps[]
 }
 export interface NewProps{
   products: ProductProps[]
+  categories?: CategoryProps[]
 }
 export interface ColorSizeProps extends FlexibleComponentProps{
   highlight?:boolean

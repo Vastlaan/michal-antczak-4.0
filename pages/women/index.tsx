@@ -4,7 +4,7 @@ import {CategoryPageProps} from '../../types'
 import {getProducts, getCategories} from '../../database'
 
 export default function WomenPage({products, categories}:CategoryPageProps){
-  return <Layout>
+  return <Layout categories={categories}>
     <Women products={products} categories={categories}/>
   </Layout> 
 }

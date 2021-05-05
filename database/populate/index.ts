@@ -1,5 +1,5 @@
-import Product from '../models/product'
-import Category from '../models/category'
+import Product from '../../models/product'
+import Category from '../../models/category'
 
 // create table category (id serial primary key, type varchar(255), parent varchar(255), "displayName" varchar(255), link text, image text);
 export const categories = [

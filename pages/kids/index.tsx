@@ -4,7 +4,7 @@ import {getProducts, getCategories} from '../../database'
 import {CategoryPageProps} from '../../types'
 
 export default function KidsPage({products,categories}:CategoryPageProps){
-  return <Layout>
+  return <Layout categories={categories}>
     <Kids products={products} categories={categories}/>
   </Layout> 
 }

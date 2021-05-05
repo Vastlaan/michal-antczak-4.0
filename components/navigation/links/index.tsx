@@ -2,9 +2,9 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import Categories from './categories'
 import { respond, FlexRow, Logo } from '../../../styles'
+import {NavigationProps} from '../../../types'
 
-
-export default function LinksComponent() {
+export default function LinksComponent({categories}:NavigationProps) {
 
   return (
     <Links>
@@ -15,7 +15,7 @@ export default function LinksComponent() {
       </Link>
     </FlexRow>
 
-    <Categories/>
+    <Categories categories={categories}/>
       
     </Links>
   )

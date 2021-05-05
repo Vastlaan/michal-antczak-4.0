@@ -13,7 +13,7 @@ export default function CategoryPage({slug, products, categories}:SlugPageProps)
   const currentCategory = categories.find(cat=>cat.link===asPath)
 
   return (
-    <Layout>
+    <Layout categories={categories}>
       <Category products={targetProducts} category={currentCategory} />
     </Layout>
   )

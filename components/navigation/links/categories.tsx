@@ -2,10 +2,9 @@ import {useState} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { fonts,FlexRow, LinkItem, Heading3 } from '../../../styles'
-import {categories} from '../../../database_development'
-import {FlexibleComponentProps} from '../../../types'
+import {FlexibleComponentProps, NavigationProps} from '../../../types'
 
-export default function CategoriesComponent() {
+export default function CategoriesComponent({categories}:NavigationProps) {
 
   const [top, setTop] = useState({value: '-1200%', type: ''})
 

@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p 2996",
-    "populateDatabase": "cd database_development && node populate_database.js",
+    "populateDatabase": "cd database && cd populate && node populate_database.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
