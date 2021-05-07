@@ -3,7 +3,7 @@ const { products, categories } = require("./index.js");
 
 const db = knex({
     client: "pg",
-    connection: process.env.DB_CONNECTION_STRING,
+    connection: "postgres://mantczak:psychedryna66@localhost:5432/goldenshoe",
 });
 
 categories.forEach((category) => {

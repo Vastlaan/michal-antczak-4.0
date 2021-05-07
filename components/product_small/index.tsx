@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 import styled from 'styled-components';
@@ -13,11 +14,19 @@ export default function ProductComponent({item}:ItemProps) {
 
   const url = buildUrlForGivenProduct(item)
 
+  let isImage = true
+  const arrayFromUrl = item.image.split('.')
+  if(arrayFromUrl[arrayFromUrl.length -1]==='mp4'){
+    isImage=false
+  }
+
   return (
     <Link href={url}>
       <ProductShort>
         <ImageConatiner>
-          <Image src={item.image} alt={item.displayName} layout='fill' objectFit='cover' />
+          {isImage?<Image src={item.image} alt={item.displayName} layout='fill' objectFit='cover' />:<video autoPlay muted loop id="myVideo">
+            <source src={item.image} type="video/mp4" />
+          </video>}
         </ImageConatiner>
         <TextItalic align='left'>for {item.category.split('-')[0]}</TextItalic>
         <TextBold align='left'>{item.displayName}</TextBold>
@@ -57,4 +66,9 @@ const ImageConatiner = styled.div`
   width: 26rem;
   min-height: 15rem;
   overflow:hidden;
+
+  video{
+    width: 100%;
+    height: 100%;
+  }
 `

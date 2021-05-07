@@ -12,6 +12,7 @@ export default class Product implements ProductProps{
   color: string;        // hex value
   size: string;
   image: string;
+  images: string[];
   stock: number;
   tax: number;
   reviews: {review: string, rate: number}[];
@@ -20,7 +21,7 @@ export default class Product implements ProductProps{
   discount: number | null;
 
 
-  constructor(category:string, group: string, displayName: string, description:string, price: number, color: string, image:string, size:string, stock: number, tax: number, isPromoted?: boolean, isNew?: boolean, discount?: number){
+  constructor(category:string, group: string, displayName: string, description:string, price: number, color: string, image:string, size:string, stock: number, tax: number, isPromoted?: boolean, isNew?: boolean, discount?: number, images?: string[]){
     this.id = uuid();
     this.category = category
     this.productGroup = group
@@ -36,6 +37,7 @@ export default class Product implements ProductProps{
     this.isPromoted= isPromoted || false
     this.isNew = isNew || false
     this.discount = discount || null
+    this.images = images || [] // so far empty
   }
 }
 

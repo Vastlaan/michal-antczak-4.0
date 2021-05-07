@@ -19,6 +19,12 @@ export default function ProductComponent({products, category, link}:ProductsProp
 
   const firstProductInStock = availableProducts[0]
 
+  let isImage = true
+  const arrayFromUrl = firstProductInStock.image.split('.')
+  if(arrayFromUrl[arrayFromUrl.length -1]==='mp4'){
+    isImage=false
+  }
+
   return (
     <SectionNarrow>
       
@@ -28,7 +34,9 @@ export default function ProductComponent({products, category, link}:ProductsProp
         <Info product={firstProductInStock} />
 
         <ImageContainer>
-          <Image src={firstProductInStock.image} alt={firstProductInStock.displayName} layout='fill' objectFit='cover' />
+          {isImage?<Image src={firstProductInStock.image} alt={firstProductInStock.displayName} layout='fill' objectFit='cover' />:<video autoPlay muted loop id="myVideo">
+            <source src={firstProductInStock.image} type="video/mp4" />
+          </video>}
         </ImageContainer>
 
         <Details products={availableProducts}/>

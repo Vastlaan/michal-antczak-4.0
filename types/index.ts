@@ -10,6 +10,7 @@ export interface ProductProps{
   color: string;        // hex value
   size: string;
   image: string;
+  images?: string[];
   stock: number;
   tax: number;
   reviews: {review: string, rate: number}[];
