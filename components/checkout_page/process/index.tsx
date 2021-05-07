@@ -4,7 +4,6 @@ import Back from '../../utils/go_back_button'
 import Form from './form'
 import Details from './details'
 import {respond, SectionNarrow} from '../../../styles'
-import {CheckoutProps} from '../../../types'
 
 
 export default function ProcessComponent() {

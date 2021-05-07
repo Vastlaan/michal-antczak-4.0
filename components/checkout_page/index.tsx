@@ -1,6 +1,5 @@
 import Header from '../header'
 import Process from './process'
-import {CheckoutProps} from '../../types'
 
 export default function CheckoutPageComponent() {
   return (
