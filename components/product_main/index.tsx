@@ -76,6 +76,11 @@ const ImageContainer = styled.div`
   margin: 0 auto;
   grid-area: image;
 
+  video{
+    width: 100%;
+    height: 100%;
+  }
+
   ${()=>respond('m','margin: 0 auto; width: 55rem;min-height: 35rem;')}
 
 `

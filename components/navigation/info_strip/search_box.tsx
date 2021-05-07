@@ -14,8 +14,9 @@ export default function SearchBoxComponent() {
   const [searchString, setSearchString] = useState("")
 
   useEffect(()=>{
-    fetch('/api/get_products').then(json=>json.json()).then(data=>setProducts(data)).catch(e=>console.error(e))
-    
+    let isCancelled = false;
+    fetch('/api/get_products').then(json=> !isCancelled && json.json()).then(data=>!isCancelled && setProducts(data)).catch(e=>!isCancelled && console.error(e))
+    return ()=>{isCancelled=true}
   },[])
 
   useEffect(()=>{
