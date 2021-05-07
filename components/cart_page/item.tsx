@@ -21,11 +21,20 @@ export default function ItemComponent({item}) {
     storeCartInLocalStorage(state.cart)
   }
 
+  let isImage = true
+  const arrayFromUrl = item.image.split('.')
+  if(arrayFromUrl[arrayFromUrl.length -1]==='mp4'){
+    isImage=false
+  }
+
   return (
     <Item>
       <Link href={url}>
         <ImageContainer>
-          <Image src={item.item.image} alt={item.item.displayName} layout='fill' objectFit='cover'/>
+          {isImage?<Image src={item.item.image} alt={item.item.displayName} layout='fill' objectFit='cover'/>:<video autoPlay muted loop id="myVideo">
+            <source src={item.image} type="video/mp4" />
+          </video>}
+          
         </ImageContainer>
       </Link>
       <Details>
@@ -84,6 +93,12 @@ const ImageContainer = styled.div`
   width: calc(100vw - 5.4rem);
   height: 25rem;
   cursor: pointer;
+
+  video{
+    width: 100%;
+    height: 100%;
+  }
+  
   ${() =>respond('s','width: 25rem; height: 20rem;')}
   ${() =>respond('m','width: 25rem; max-height: 20rem;')}
 `
