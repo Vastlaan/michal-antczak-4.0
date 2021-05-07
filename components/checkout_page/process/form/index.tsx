@@ -1,12 +1,18 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import styled from 'styled-components'
+import {Context} from '../../../../store'
 import Information from './information'
 import Address from './address'
 import Payment from './payment'
 import {FlexCol, ButtonPrimary} from '../../../../styles'
 import {validateCheckoutForm} from '../../../../validations'
+import {loadStripe} from '@stripe/stripe-js'
+
+const stripePromise = loadStripe('pk_test_ELRnct8g4sptiDFtYSv7KTys')
 
 export default function FormComponent() {
+
+  const {state} = useContext(Context)
 
   const [name, setName] = useState('')
   const [surname, setSurname] = useState('')
@@ -20,7 +26,7 @@ export default function FormComponent() {
 
   const [error, setError] = useState({field:"", message:""})
 
-  function purchase(e){
+  async function purchase(e){
     e.preventDefault()
     setError({field:"", message:""})
 
@@ -31,7 +37,40 @@ export default function FormComponent() {
       return setError(isFormValid)
     }
 
-    console.log(name, surname, email, phone, street, number, city, postcode, payment)
+    const data = {
+      cart: state.cart,
+      client: {name,surname,email,phone,street,number,city,postcode,payment},
+    }
+
+    try{
+      const response = await fetch('/api/checkout',{
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      const { sessionId, failure } = await response.json();
+
+      if(!sessionId){      
+        return setError({field:"general", message: failure})
+      }
+
+      localStorage.setItem(
+          "goldenshoesessionid",
+          JSON.stringify({ sessionId })
+      );
+      const stripe = await stripePromise;
+      const { error } = await stripe.redirectToCheckout({
+          sessionId,
+      });
+      if(error){setError({field:"general", message: error.message})}
+    }
+    catch(e){
+      console.error(e)
+      return setError({field:"general", message: "Ups, something went wrong. Try again later."})
+    }
+    
   }
 
   return (

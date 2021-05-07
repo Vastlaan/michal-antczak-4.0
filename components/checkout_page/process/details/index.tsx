@@ -29,7 +29,7 @@ export default function DetailsComponent() {
       </FlexRow>
       <FlexRow wide='100%' justify='space-between' margin='1.4rem 0'>
         <TextBold>Total amount:</TextBold>
-        <TextBold>&pound;{totalPrice + delivery}</TextBold>
+        <TextBold>&pound;{(totalPrice + delivery).toFixed(2)}</TextBold>
       </FlexRow>
       
       <Text margin='.4rem 0' align='left'>Free shipping</Text>

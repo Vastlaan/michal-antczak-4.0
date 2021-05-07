@@ -2,6 +2,7 @@ import {useContext, useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import {Context} from '../../../store'
+import Search from './search_box'
 import {MdPinDrop, MdSearch} from 'react-icons/md'
 import {GiShoppingBag} from 'react-icons/gi'
 import {FlexRow, LinkSmall} from '../../../styles'
@@ -35,10 +36,8 @@ export default function LinksComponent() {
         </LinkSmall>        
       </Link> 
 
-      <SearchBox>
-        <MdSearch/>
-        <input type="text"/>
-      </SearchBox>
+      <Search />
+      
     </FlexRow>
   )
 }

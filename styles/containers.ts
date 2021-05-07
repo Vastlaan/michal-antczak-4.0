@@ -7,7 +7,7 @@ import {FlexibleComponentProps} from '../types'
 export const SectionNarrow = styled.section<FlexibleComponentProps>`
   max-width: 996px;
   margin: ${(p) =>p.margin?p.margin:"0 auto"};
-  padding: 1.4rem;
+ padding: ${p=>p.padding?p.padding:'1.4rem'};
 
   ${()=>respond('xxl', 'max-width:1225px')};
 `

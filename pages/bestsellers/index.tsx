@@ -10,14 +10,27 @@ export default function BestsellersPage({products, categories}:BestsellersProps)
 }
 
 export async function getServerSideProps(){
-  const products = await getProducts()
-  const categories = await getCategories()
-  const targetProducts = products.filter(prod=>prod.isPromoted)
 
-  return{
-    props:{
-      products:targetProducts,
-      categories
+  try{
+    const products = await getProducts()
+    const categories = await getCategories()
+    const targetProducts = products.filter(prod=>prod.isPromoted)
+
+    return{
+      props:{
+        products:targetProducts,
+        categories
+      }
+    }
+  }catch(e){
+    console.error(e)
+    
+    return{
+      props:{
+        products:[],
+        categories: []
+      }
     }
   }
+  
 }

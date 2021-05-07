@@ -13,10 +13,22 @@ export default function CartPage({categories}:CartProps){
 }
 export async function getServerSideProps(){
 
-  const categories = await getCategories()
-  return{
-    props:{
-      categories
+  try{
+    const categories = await getCategories()
+    return{
+      props:{
+        categories
+      }
     }
   }
+  catch(e){
+    console.error(e)
+    return{
+      props:{
+        products:[],
+        categories: []
+      }
+    }
+  }
+  
 }
