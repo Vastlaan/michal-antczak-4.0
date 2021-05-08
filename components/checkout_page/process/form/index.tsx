@@ -30,8 +30,6 @@ export default function FormComponent() {
     e.preventDefault()
     setError({field:"", message:""})
 
-    console.log(name, surname, email, phone, street, number, city, postcode, payment)
-
     const isFormValid = validateCheckoutForm({name, surname, email, phone, street, number, city, postcode, payment})
     if(isFormValid.field){
       return setError(isFormValid)

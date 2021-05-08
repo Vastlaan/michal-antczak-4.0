@@ -22,22 +22,35 @@ export async function getServerSideProps({query}){
 
   const {session_id} = query
 
-  const sessionDetailsJson = await fetch(`${process.env.HOST}/api/checkout_sessions/${session_id}`)
-  const sessionDetails = await sessionDetailsJson.json()
-  const categories = await getCategories()
+  try{
+    const sessionDetailsJson = await fetch(`${process.env.HOST}/api/checkout_sessions/${session_id}`)
+    const sessionDetails = await sessionDetailsJson.json()
+    const categories = await getCategories()
 
-  sessionDetails.line_items.data.map(item=>{
-    
-    const id = item.description
-    const quantity = item.quantity
-    console.log(id)
+    if(sessionDetails.line_item){
+      sessionDetails.line_items.data.map(item=>{
+      
+        const id = item.description
+        const quantity = item.quantity
 
-    removeProductById(id, quantity)
-  })
-  return{
-    props:{
-      session_id,
-      categories,
+        id && removeProductById(id, quantity)
+      })
+    }
+    return{
+      props:{
+        session_id,
+        categories,
+      }
+    }
+  }catch(e){
+    console.log(e)
+    return{
+      props:{
+        session_id: null,
+        categories: [],
+      }
     }
   }
+
+  
 }

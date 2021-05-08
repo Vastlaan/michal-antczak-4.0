@@ -26,19 +26,17 @@ export default function CookieStatementComponent() {
     return (
         <CookiesStatement ref={target}>
             <CustomText>
-                Wij gebruiken cookies! Om je de best mogelijke ervaring te
-                bieden op onze website, gebruiken wij en derde partijen
-                technieken zoals cookies.{" "}
+                We use cookies! To give you the best possible experience on our website, we use techniques such as cookies.{" "}
                 <Link href="/cookies">
-                    <span>Lees meer</span>
+                    <span>Read more</span>
                 </Link>{" "}
-                over wat de cookies zijn en hoe gebruiken wij cookies.
+                about what are cookies and how we use them on our website.
             </CustomText>
             <ButtonSmall
                 margin=".9rem 1.4rem"
                 onClick={hideStatement}
             >
-                Ga Akkord
+                Agree
             </ButtonSmall>
         </CookiesStatement>
     );
@@ -80,12 +78,12 @@ const CustomText = styled.p<FlexibleComponentProps>`
 `;
 
 const ButtonSmall = styled.button<FlexibleComponentProps>`
-    margin: ${(p)=>p.margin?p.margin: '1.4rem'});
+    margin: ${(p)=>p.margin?p.margin: '1.4rem'};
     padding: 0.6rem 0.9rem;
-    background-color: #04917c;
-    border: 1px solid #04917c;
+    background-color: ${(p) => p.theme.secondary};
+    border: 1px solid ${(p) => p.theme.secondary};
     font-family: ${fonts.heading};
-    font-weight: 300;
-    color: ${(p) => (p.color ? p.color : p.theme.grey1)};
+    font-weight: 600;
+    color: ${(p) => (p.color ? p.color : p.theme.grey5)};
     letter-spacing: 0.15rem;
 `;

@@ -2,8 +2,7 @@ import {useContext, useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import {Context} from '../../../store'
-import Search from './search_box'
-import {MdPinDrop, MdSearch} from 'react-icons/md'
+import {MdPinDrop} from 'react-icons/md'
 import {GiShoppingBag} from 'react-icons/gi'
 import {FlexRow, LinkSmall} from '../../../styles'
 
@@ -35,44 +34,11 @@ export default function LinksComponent() {
           Find Store
         </LinkSmall>        
       </Link> 
-
-      <Search />
       
     </FlexRow>
   )
 }
 
-const SearchBox = styled.div`
-  display: flex;
-  align-items: center;
-  background-color: ${p=>p.theme.grey1};
-  padding: 0 0 0 .9rem;
-  transition: all .3s;
-
-  &:hover{
-    svg{
-      color: ${p=>p.theme.grey4};
-    }
-    
-  }
-
-  svg{
-    font-size: 1.9rem;
-    color: ${p=>p.theme.grey4};
-    margin-right: .9rem;
-    transition: all .3s;
-    cursor: pointer;
-  }
-
-  input{
-    padding: .4rem 1.4rem;
-
-    &:active, :focus{
-      outline: none;
-      box-shadow: 0 0 0 transparent;
-    }
-  }
-`
 const Cart = styled.div`
   position: relative;
 `

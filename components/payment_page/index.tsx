@@ -15,22 +15,25 @@ export default function PaymentPage({session_id}: PaymentProps){
 
   useEffect(() => {       
     if(error){
-      setError('Failure! Probably one of the items you purchased has gone meanwhile out of stock. Sorry for inconvenience.')
+      setError('Failure! Server unavailable. Please try again later.')
     }else if (
       localStorage.getItem("goldenshoesessionid") &&
       session_id ===
       JSON.parse(localStorage.getItem("goldenshoesessionid")).sessionId
     ) {
         localStorage.removeItem("goldenshoecart");
+        localStorage.removeItem("goldenshoesessionid");
+    }else{
+      setError("Failure! Wrong credentials.")
     }
-    localStorage.removeItem("goldenshoesessionid");
+    
   }, []);
   return (
     <>
       <Header title={`Payment feedback`} body={``} image={`/img/header-8.jpg`}/>
-      <SectionNarrow padding='10rem 2rem'>
+      <SectionNarrow padding='6.7rem 2rem'>
         <Heading text='Your payment status'/>
-        {error?<TextBold margin='2.7rem auto'>{error}</TextBold>:<TextBold margin='2.7rem auto'>
+        {error?<TextBold margin='1.4rem auto'>{error}</TextBold>:<TextBold margin='2.7rem auto'>
           Success! Thank you for you purchase! You will recive the confirmation e-mail with shipping details within 24 hours.
         </TextBold>}
 

@@ -1,10 +1,8 @@
-import {useContext, useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
-import {Context} from '../../../store'
-import {MdPinDrop, MdSearch} from 'react-icons/md'
+import {MdSearch} from 'react-icons/md'
 import ProductSmall from '../../product_small'
-import {FlexRow, LinkSmall, respond} from '../../../styles'
+import { respond} from '../../../styles'
 import {ProductProps} from '../../../types'
 
 export default function SearchBoxComponent() {
@@ -40,9 +38,10 @@ export default function SearchBoxComponent() {
         <MdSearch/>
         <input type="text" value={searchString} onChange={(e)=>setSearchString(e.target.value)}/>
       </SearchBox>
-      {filteredProducts.length > 0 && searchString.length > 0 ? <SearchResults>
-        {filteredProducts.map(prod=><ProductSmall item={prod} />)}  
-      </SearchResults>: null}
+      {filteredProducts.length > 0 && searchString.length > 0 ? <ResultsContainer><SearchResults>
+        
+        {filteredProducts.map((prod,i)=><ProductSmall key={i} item={prod} />)}  
+      </SearchResults></ResultsContainer>: null}
     </>
   )
 }
@@ -52,6 +51,10 @@ const SearchBox = styled.div`
   background-color: ${p=>p.theme.grey1};
   padding: 0 0 0 .9rem;
   transition: all .3s;
+  width: 25rem;
+  
+  ${()=>respond('s','width: 30rem;')}
+  ${()=>respond('m','width: 25rem;')}
 
   &:hover{
     svg{
@@ -69,6 +72,8 @@ const SearchBox = styled.div`
   }
 
   input{
+    height: 100%;
+    flex:1;
     padding: .4rem 1.4rem;
 
     &:active, :focus{
@@ -77,15 +82,22 @@ const SearchBox = styled.div`
     }
   }
 `
-const SearchResults = styled.div`
-  display: flex;
+const ResultsContainer = styled.div`
   background-color:${p=>p.theme.grey1};
   border-bottom: 1px solid ${p=>p.theme.grey4};
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  z-index: 99;
+  max-height: 60vh;
+  overflow-y: scroll;
+  z-index: 99;  
+`
+const SearchResults = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 
   ${()=>respond('m','flex-direction: row; flex-wrap: wrap;')}
 

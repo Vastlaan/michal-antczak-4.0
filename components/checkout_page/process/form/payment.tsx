@@ -26,6 +26,7 @@ export default function InformationComponent({payment, setPayment, error}:Paymen
 }
 const FieldPayment = styled(Field)`
   flex-direction: row;
+  align-items: center;
 
   input{
     padding:0;

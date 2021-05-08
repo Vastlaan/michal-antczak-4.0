@@ -22,7 +22,7 @@ export default function NavigationComponent() {
             }else if(i===1){
                 return(
                     <Link href={`/${path}`} key={i}>
-                        <Path><BsChevronRight/>{path}</Path>
+                        <Path><BsChevronRight/>{path.substring(0, 16)}</Path>
                     </Link>
                 )
             }else if(i===2){
@@ -47,7 +47,7 @@ const Navigatie = styled.div`
 const Path = styled.p`
     font-family: ${fonts.heading};
     font-size: 1.9rem;
-    color: ${p=>p.theme.grey1};
+    color: ${p=>p.theme.secondary};
     font-weight: 600;
     transition: all .3s;
     text-transform: capitalize;
@@ -56,11 +56,11 @@ const Path = styled.p`
     margin: .9rem 0;
     cursor: pointer;
     &:hover{
-      color: ${p=>p.theme.secondary};
+      color: ${p=>p.theme.primary};
     }
     svg{
       font-size: 1.6rem;
-      color: ${p=>p.theme.grey1};
+      color: ${p=>p.theme.secondary};
       margin-right: .4rem;
     }
 `
