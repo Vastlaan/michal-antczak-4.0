@@ -1,4 +1,5 @@
 import Layout from '../../layouts/main'
+import Head from '../../components/seo'
 import Cart from '../../components/cart_page'
 import {getCategories} from '../../database'
 import {CategoryProps} from '../../types'
@@ -8,6 +9,7 @@ export interface CartProps{
 }
 export default function CartPage({categories}:CartProps){
   return <Layout categories={categories}>
+    <Head/>
     <Cart />
   </Layout> 
 }

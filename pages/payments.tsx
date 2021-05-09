@@ -1,4 +1,5 @@
 import Layout from '../layouts/main'
+import Head from '../components/seo'
 import {removeProductById, getCategories} from '../database'
 import { CategoryProps} from '../types'
 import Payment from '../components/payment_page'
@@ -14,6 +15,7 @@ export default function PaymentPage({session_id, categories}:PaymentProps){
   
 
   return <Layout categories={categories}>
+    <Head/>
     <Payment session_id={session_id} />
   </Layout> 
 }

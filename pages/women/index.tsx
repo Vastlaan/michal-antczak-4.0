@@ -1,10 +1,12 @@
 import Layout from '../../layouts/main'
+import Head from '../../components/seo'
 import Women from '../../components/women_page'
 import {CategoryPageProps} from '../../types'
 import {getProducts, getCategories} from '../../database'
 
 export default function WomenPage({products, categories}:CategoryPageProps){
   return <Layout categories={categories}>
+    <Head/>
     <Women products={products} categories={categories}/>
   </Layout> 
 }

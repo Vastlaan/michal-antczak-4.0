@@ -1,10 +1,12 @@
 import Layout from '../../layouts/main'
+import Head from '../../components/seo'
 import Kids from '../../components/kids_page'
 import {getProducts, getCategories} from '../../database'
 import {CategoryPageProps} from '../../types'
 
 export default function KidsPage({products,categories}:CategoryPageProps){
   return <Layout categories={categories}>
+    <Head/>
     <Kids products={products} categories={categories}/>
   </Layout> 
 }

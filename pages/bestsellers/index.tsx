@@ -1,10 +1,12 @@
 import Layout from '../../layouts/main'
+import Head from '../../components/seo'
 import Bestsellers from '../../components/bestsellers_page'
 import {getProducts, getCategories} from '../../database'
 import {BestsellersProps} from '../../types'
 
 export default function BestsellersPage({products, categories}:BestsellersProps){
   return <Layout categories={categories}>
+    <Head/>
     <Bestsellers products={products}/>
   </Layout> 
 }

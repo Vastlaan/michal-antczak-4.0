@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://www.goldenshoe.michalantczak.com/sitemap.xml
