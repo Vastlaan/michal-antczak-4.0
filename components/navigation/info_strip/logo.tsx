@@ -8,7 +8,7 @@ export default function LogoComponent() {
     <FlexRow>
       <Link href='/'>
         <LogoIcon>
-          <Image src='/logo-navigation.png' alt='logo' width='52' height='26'/>
+          <Image src='/logo-navigation.png' alt='logo' width='64' height='34'/>
         </LogoIcon>
       </Link>
     </FlexRow>

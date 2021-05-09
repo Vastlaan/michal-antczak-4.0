@@ -72,7 +72,7 @@ const CustomText = styled.p<FlexibleComponentProps>`
 
     span {
         text-decoration: underline;
-        color: ${(p) => p.theme.primary};
+        color: ${(p) => p.theme.secondary};
         cursor: pointer;
     }
 `;

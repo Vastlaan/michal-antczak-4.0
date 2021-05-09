@@ -44,7 +44,7 @@ margin: ${p=>p.margin?p.margin:'0'};
     color: ${p=>p.theme.secondary};
   }
 `
-export const Heading4 = styled.h4<FlexibleComponentProps>`
+export const Heading4 = styled.h2<FlexibleComponentProps>`
   margin: ${p=>p.margin?p.margin:'0'};
   font-family: ${fonts.heading};
   font-size: 2.7rem;

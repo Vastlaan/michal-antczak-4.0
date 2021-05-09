@@ -36,7 +36,8 @@ export default function SearchBoxComponent() {
     <>
       <SearchBox>
         <MdSearch/>
-        <input type="text" value={searchString} onChange={(e)=>setSearchString(e.target.value)}/>
+        <label htmlFor="search">Search</label>
+        <input type="text" id='search' name='search' value={searchString} onChange={(e)=>setSearchString(e.target.value)}/>
       </SearchBox>
       {filteredProducts.length > 0 && searchString.length > 0 ? <ResultsContainer><SearchResults>
         
@@ -80,6 +81,12 @@ const SearchBox = styled.div`
       outline: none;
       box-shadow: 0 0 0 transparent;
     }
+  }
+  label{
+    width:1px;
+    height:1px;
+    visibility: hidden;
+    overflow: hidden;
   }
 `
 const ResultsContainer = styled.div`

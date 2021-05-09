@@ -14,6 +14,7 @@ export default function ButtonMenu({isOpen, setIsOpen}:ButtonMenuProps) {
     
     return (
         <Button
+            name='triggerMenu'
             isOpen={isOpen}
             onClick={() => setIsOpen(prevState=>!prevState)}
         >
