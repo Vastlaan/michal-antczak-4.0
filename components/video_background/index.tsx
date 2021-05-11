@@ -12,9 +12,9 @@ export default function VideoBackground({heading, para}: VideoBackgroundProps) {
       <video autoPlay muted loop id="myVideo">
         <source src='/video/video-background-1.mp4' type="video/mp4" />
       </video>
-      <Heading1>{heading}</Heading1>
+      <Heading1 color='snow'>{heading}</Heading1>
       <Line/>
-      <TextBold align='center' color='white'>{para}</TextBold>
+      <TextBold align='center' color='#5E5E5E'>{para}</TextBold>
     </Container>
   )
 }
@@ -32,16 +32,16 @@ const Container = styled.div`
   overflow: hidden;
   video{
     position: absolute;
-    top: 50%;
-    left:50%;
+    bottom: 0;
+    left:0;
     min-width: 100%;
+    max-width:200%;
     min-height: 100%;
-    transform: translateX(-50%) translateY(-50%);
     z-index: -1;
   }
 `
 const Line = styled.div`
     width: 20rem;
     height: 2px;
-    background-color: white;
+    background-color: ${p=>p.theme.primary};
 `;

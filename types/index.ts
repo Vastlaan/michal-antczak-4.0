@@ -85,6 +85,7 @@ export interface FlexibleComponentProps{
   minHeight?:string;
   wrap?:string;
   top?:string
+  highlight?: boolean;
 }
 
 export interface Payload {

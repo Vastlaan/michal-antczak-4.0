@@ -17,10 +17,11 @@ export const LinkSmall = styled.a<FlexibleComponentProps>`
   cursor:pointer;
 
   svg{
-    font-size: 1.9rem;
+    font-size: 3.7rem;
     margin-right: .9rem;
     color: ${p=>p.theme.grey1};
     transition: all .3s;
+    ${()=>respond('m','font-size: 1.9rem;')}
   }
 
   &:hover{
@@ -74,9 +75,9 @@ export const ButtonEmpty = styled.button<FlexibleComponentProps>`
   text-transform: uppercase;
   font-family: ${fonts.heading};
   letter-spacing: .2rem;
-  border: 1px solid ${p=>p.theme.grey1};
-  background-color: transparent;
-  color: ${p=>p.theme.grey1};
+  border: 1px solid ${p=>p.color?p.color:p.theme.grey1};
+  background-color: ${p=>p.highlight? p.theme.secondary: 'transparent'};
+  color: ${p=>p.color?p.color:p.theme.grey1};
   box-shadow: 0 0 1rem rgba(255,255,255,.3);
   transition: all .3s;
 
@@ -86,6 +87,24 @@ export const ButtonEmpty = styled.button<FlexibleComponentProps>`
     background-color: ${p=>p.theme.secondary};
     color: ${p=>p.theme.grey5};
   }
+
+`
+export const ButtonEmptySmall = styled.button<FlexibleComponentProps>`
+  min-width: 12rem;
+  margin: ${p=>p.margin?p.margin:' 1.4rem 0;'};
+  padding: .4rem .9rem;
+  font-size: 1.9rem;
+  text-transform: capitalize;
+  font-family: ${fonts.heading};
+  letter-spacing: .2rem;
+  border-bottom: 1px solid ${p=>p.highlight?p.theme.grey5:'rgba(0,0,0,.3)'};
+  border-right: 1px solid rgba(0,0,0,.3);
+  background-color: ${p=>p.highlight? p.theme.grey5: 'transparent'};
+  color: ${p=>p.highlight?p.theme.grey1:p.theme.grey4};
+  box-shadow: 0 0 1rem rgba(255,255,255,.3);
+  transition: all .3s;
+
+  ${()=>respond('m','padding: .4rem .9rem; min-width: 20rem;')}
 
 `
 export const ButtonSecondary = styled.button<FlexibleComponentProps>`

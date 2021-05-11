@@ -31,7 +31,7 @@ export default function InfoStripComponent() {
 
         <Logo/>
 
-        {!isSmall && <Links/>}
+        <Links isSmall={isSmall}/>
 
         <Search />
 

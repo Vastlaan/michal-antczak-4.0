@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Heading from '../utils/heading'
 import Info from './info'
 import Details from './details'
+import Shipping from './shipping'
 import {respond, SectionNarrow} from '../../styles'
 import {ProductProps} from '../../types'
 
@@ -42,6 +43,7 @@ export default function ProductComponent({products, category, link}:ProductsProp
         <Details products={availableProducts}/>
         
       </Grid>
+      <Shipping/>
     </SectionNarrow>
   )
 }

@@ -17,6 +17,7 @@ export default function ButtonMenu({isOpen, setIsOpen}:ButtonMenuProps) {
             name='triggerMenu'
             isOpen={isOpen}
             onClick={() => setIsOpen(prevState=>!prevState)}
+            aria-label="menu"
         >
             <div></div>
         </Button>

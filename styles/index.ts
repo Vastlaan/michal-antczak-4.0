@@ -9,7 +9,9 @@ import {Section,SectionNarrow, ContainerNarrow, FlexRow, FlexCol, ProductsConati
 // TYPOGRAPHY
 import {Logo,Heading1,Heading2,Heading3,Heading4, Text, TextSmall, Anchor, TextItalic,TextBold} from './typography'  
 // BUTTONS
-import {LinkSmall,LinkExtra,LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmpty} from './buttons'
+import {LinkSmall,LinkExtra,LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmptySmall,ButtonEmpty} from './buttons'
+// DECO
+import {Line} from './decorations'
 
 export {
   // MEDIA QUERIES
@@ -23,5 +25,7 @@ export {
   // TYPOGRAPHY
   Logo,Heading1,Heading2,Heading3,Heading4, Text, TextSmall, Anchor, TextItalic,TextBold,
   // BUTTONS
-  LinkSmall,LinkExtra, LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmpty
+  LinkSmall,LinkExtra, LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmptySmall,ButtonEmpty,
+  // DECO
+  Line,
 }

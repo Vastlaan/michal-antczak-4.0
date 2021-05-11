@@ -47,7 +47,7 @@ const Navigatie = styled.div`
 const Path = styled.p`
     font-family: ${fonts.heading};
     font-size: 1.9rem;
-    color: ${p=>p.theme.secondary};
+    color: ${p=>p.theme.grey2};
     font-weight: 600;
     transition: all .3s;
     text-transform: capitalize;
@@ -56,11 +56,11 @@ const Path = styled.p`
     margin: .9rem 0;
     cursor: pointer;
     &:hover{
-      color: ${p=>p.theme.primary};
+      color: ${p=>p.theme.secondary};
     }
     svg{
       font-size: 1.6rem;
-      color: ${p=>p.theme.secondary};
+      color: ${p=>p.theme.grey2};
       margin-right: .4rem;
     }
 `

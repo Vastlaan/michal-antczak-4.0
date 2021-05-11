@@ -2,7 +2,7 @@ import {useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 import styled from 'styled-components';
-import {TextBold,TextItalic} from '../../styles'
+import {TextBold,TextItalic, Line, respond} from '../../styles'
 import {ProductProps} from '../../types'
 import {countFinalPriceOfSingleProduct, buildUrlForGivenProduct} from '../../utils'
 
@@ -23,14 +23,17 @@ export default function ProductComponent({item}:ItemProps) {
   return (
     <Link href={url}>
       <ProductShort>
+        
         <ImageConatiner>
           {isImage?<Image src={item.image} alt={item.displayName} layout='fill' objectFit='cover' />:<video autoPlay muted loop id="myVideo">
-            <source src={item.image} type="video/mp4" />
+            <source src={item.image} title={item.displayName} type="video/mp4" />
+            Your device does not support video
           </video>}
         </ImageConatiner>
         <TextItalic align='left'>for {item.category.split('-')[0]}</TextItalic>
+        <Line wide="10rem" margin='.4rem 0'/>
         <TextBold align='left'>{item.displayName}</TextBold>
-        <TextBold align='left' size='1.9rem'>{countFinalPriceOfSingleProduct(item)}</TextBold>
+        <TextBold align='left' size='1.9rem'>&pound;{countFinalPriceOfSingleProduct(item)}</TextBold>
       </ProductShort>
     </Link>
   )
@@ -51,11 +54,13 @@ const ProductShort = styled.div`
   }
 
   &:hover{
-    border: 1px solid rgba(0,0,0,.3);
 
     img{
       display: block;
-      transform: scale(1.2);
+    }
+
+    ${Line}{
+      width: 100%;
     }
   }
 
@@ -63,12 +68,21 @@ const ProductShort = styled.div`
 
 const ImageConatiner = styled.div`
   position: relative;
-  width: 26rem;
-  min-height: 15rem;
+  width: 35rem;
+  height: 22rem;
+  margin: 0 auto;
   overflow:hidden;
+  box-shadow: 0 0 1rem rgba(0,0,0,.3);
+  background-color: #EFF0EF;
+
+  ${()=>respond('m',`margin: 0; width: 26rem; min-height: 18rem; max-height: 18rem;`)}
 
   video{
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 115%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
   }
 `

@@ -66,7 +66,7 @@ export const Text = styled.p<FlexibleComponentProps>`
   font-size: 1.6rem;
   font-weight: 400;
   color: ${(p)=>p.color?p.color:p.theme.grey4};
-  max-width: ${(p)=>p.wide?'65rem':'45rem'};
+  max-width: ${(p)=>p.wide?p.wide:'45rem'};
   text-align: ${p=>p.align?p.align:'center'};
 `
 export const TextSmall = styled.p<FlexibleComponentProps>`

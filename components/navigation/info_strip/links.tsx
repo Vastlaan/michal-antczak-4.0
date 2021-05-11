@@ -2,11 +2,14 @@ import {useContext, useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import {Context} from '../../../store'
-import {MdPinDrop} from 'react-icons/md'
+import {RiCustomerServiceLine} from 'react-icons/ri'
 import {GiShoppingBag} from 'react-icons/gi'
-import {FlexRow, LinkSmall} from '../../../styles'
+import {FlexRow, LinkSmall, respond} from '../../../styles'
 
-export default function LinksComponent() {
+interface LinksProps{
+  isSmall: boolean;
+}
+export default function LinksComponent({isSmall}: LinksProps) {
 
   const { state } = useContext(Context);
 
@@ -17,12 +20,12 @@ export default function LinksComponent() {
   }, [state.cart])
 
   return (
-    <FlexRow margin='0 0 0 auto'>
+    <LinksContainer>
       <Link href='/cart'>
         <Cart>
           <LinkSmall  margin="0 1.9rem 0 0">
             <GiShoppingBag/>
-            Cart
+            {isSmall?"":"Cart"}
           </LinkSmall>
           {cartItems > 0 && <Amount>{cartItems}</Amount>}
         </Cart>
@@ -30,14 +33,30 @@ export default function LinksComponent() {
 
       <Link href='/contact'>
         <LinkSmall margin="0 1.9rem 0 0">
-          <MdPinDrop/>
-          Find Store
+          <RiCustomerServiceLine/>
+          {isSmall?"":"Customer Service"}
         </LinkSmall>        
       </Link> 
       
-    </FlexRow>
+    </LinksContainer>
   )
 }
+
+const LinksContainer = styled.div`
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: ${p=>p.theme.grey5};
+  padding: 1.4rem;
+
+  ${()=>respond('m','position:static;flex-direction: row; width: auto; margin: 0 0 0 auto;padding: 0; background-color: transparent;justify-content: center;')}
+`
 
 const Cart = styled.div`
   position: relative;

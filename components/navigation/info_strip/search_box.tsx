@@ -4,6 +4,7 @@ import {MdSearch} from 'react-icons/md'
 import ProductSmall from '../../product_small'
 import { respond} from '../../../styles'
 import {ProductProps} from '../../../types'
+import {CgCloseR} from 'react-icons/cg'
 
 export default function SearchBoxComponent() {
 
@@ -35,12 +36,11 @@ export default function SearchBoxComponent() {
   return (
     <>
       <SearchBox>
-        <MdSearch/>
-        <label htmlFor="search">Search</label>
-        <input type="text" id='search' name='search' value={searchString} onChange={(e)=>setSearchString(e.target.value)}/>
+        <MdSearch/>    
+        <input type="search" id='search' name='search' aria-label="search through products" autoComplete="search" value={searchString} onChange={(e)=>setSearchString(e.target.value)}/>
       </SearchBox>
       {filteredProducts.length > 0 && searchString.length > 0 ? <ResultsContainer><SearchResults>
-        
+        <Close type='button' aria-label='close search results' onClick={()=>setSearchString("")}><CgCloseR/></Close>
         {filteredProducts.map((prod,i)=><ProductSmall key={i} item={prod} />)}  
       </SearchResults></ResultsContainer>: null}
     </>
@@ -52,7 +52,7 @@ const SearchBox = styled.div`
   background-color: ${p=>p.theme.grey1};
   padding: 0 0 0 .9rem;
   transition: all .3s;
-  width: 25rem;
+  width: 24rem;
   
   ${()=>respond('s','width: 30rem;')}
   ${()=>respond('m','width: 25rem;')}
@@ -82,12 +82,6 @@ const SearchBox = styled.div`
       box-shadow: 0 0 0 transparent;
     }
   }
-  label{
-    width:1px;
-    height:1px;
-    visibility: hidden;
-    overflow: hidden;
-  }
 `
 const ResultsContainer = styled.div`
   background-color:${p=>p.theme.grey1};
@@ -108,4 +102,16 @@ const SearchResults = styled.div`
 
   ${()=>respond('m','flex-direction: row; flex-wrap: wrap;')}
 
+`
+const Close = styled.button`
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  font-size: 2.7rem;
+  color: ${p=>p.theme.grey5};
+  transition: all .3s;
+
+  &:hover{
+    color: ${p=>p.theme.primary};
+  }
 `

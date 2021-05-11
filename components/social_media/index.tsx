@@ -23,13 +23,13 @@ function SocialMediaComponent({ theme }: ThemeProps) {
               This and a lot more you will find on our profiles on Facebook, Instagram and Twitter.
             </Text>
             <FlexRow margin='2.7rem auto'>
-              <Icon href="https://facebook.com" aria-label="Facebook">
+              <Icon href="https://facebook.com" aria-label="follow us on Facebook">
                 <GrFacebook color='#4267B2'/>
               </Icon>
-              <Icon href="https://instagram.com" aria-label="Instagream">
+              <Icon href="https://instagram.com" aria-label="follow us on Instagream">
                 <GrInstagram color='#fb3958'/>
               </Icon>
-              <Icon href="https://twitter.com" aria-label="Twitter">
+              <Icon href="https://twitter.com" aria-label="follow us on Twitter">
                 <GrTwitter color='skyblue'/>
               </Icon>
             </FlexRow>
