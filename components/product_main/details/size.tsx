@@ -1,5 +1,6 @@
+import {useState, useRef} from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
+import SizeIndicator from '../../modals/size_indicator'
 import { FlexRow, TextBold, LinkExtra} from '../../../styles'
 import { ColorSizeProps} from '../../../types'
 
@@ -10,17 +11,23 @@ interface SizeProps{
 }
 
 export default function SizeComponent({availableSizes,chosenSize,  setChosenSize} : SizeProps) {
+
+  const modal = useRef()
+
+  const [displayModal, setDisplayModal] = useState(false)
   return (
     <>
       <TextBold align='left'>Select Size:</TextBold>
       <FlexRow justify='flex-start'>
         {availableSizes.map((size,i)=><Size key={`size-${i}`}  onClick={()=>setChosenSize(prevState=> prevState===size?null:size)} highlight={size===chosenSize}>{size}</Size>)}
       </FlexRow>
-      <Link href='/contact'>
-        <LinkExtra align='left' color='#4d5057' margin="0 0 1.4rem 0">
-          What is my shoe size?
-        </LinkExtra>        
-      </Link> 
+      
+      <LinkExtra align='left' color='#4d5057' margin="0 0 1.4rem 0" onClick={()=>setDisplayModal(true)}>
+        What is my shoe size?
+      </LinkExtra>  
+
+      <SizeIndicator displayModal={displayModal} closeModal={setDisplayModal}/>
+      
     </>
   )
 }

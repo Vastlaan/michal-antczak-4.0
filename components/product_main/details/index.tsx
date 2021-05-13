@@ -6,6 +6,7 @@ import Size from './size'
 import Color from './color'
 import Price from './price'
 import { FlexRow,  ButtonSecondary} from '../../../styles'
+import Error from '../../utils/error_message'
 import {ProductProps} from '../../../types'
 import {storeCartInLocalStorage} from '../../../utils'
 
@@ -79,7 +80,7 @@ export default function DetailsComponent({products}:DetailsProps) {
 
       <Price firstProductInStock={firstProductInStock}/>
 
-      {error.field === 'general' && <small>{error.message}</small>}
+      {error.field === 'general' && <Error message={error.message} />}
 
       <FlexRow margin='1.4rem 0' justify='flex-start'>
         <ButtonSecondary onClick={addToCart} margin='0'>Add to cart</ButtonSecondary>

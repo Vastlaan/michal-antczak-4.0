@@ -4,6 +4,7 @@ import {Context} from '../../../../store'
 import Information from './information'
 import Address from './address'
 import Payment from './payment'
+import Error from '../../../utils/error_message'
 import {FlexCol, ButtonPrimary} from '../../../../styles'
 import {validateCheckoutForm} from '../../../../validations'
 import {loadStripe} from '@stripe/stripe-js'
@@ -81,7 +82,7 @@ export default function FormComponent() {
 
         <Payment payment={payment} setPayment={setPayment} error={error} />
 
-        {error.field && <small>{error.message}</small>}
+        {error.field && <Error message={error.message} />}
         <ButtonPrimary type='submit' margin='2.7rem 0'>Purchase</ButtonPrimary>
 
       </FlexCol>

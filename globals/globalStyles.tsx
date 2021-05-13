@@ -66,7 +66,10 @@ const StylesConatiner = createGlobalStyle<ThemeProps>`
       color: ${(p) => p.theme.grey4}
   }
   small{
-      color: ${p=>p.theme.primary};
+      padding: .4rem .9rem;
+      background-color: ${p=>p.theme.primary};
+      color: ${p=>p.theme.grey1};
       font-size: 1.4rem;
+      letter-spacing: .15rem;
   }
 `;

@@ -6,19 +6,19 @@ export default function ShoppingComponent() {
     <FlexCol align='flex-start' justify='flex-start'>
       <TextBold color='white'>Shopping:</TextBold>
       <br/>
-      <Link href='/contact'>          
+      <Link href='/men'>          
         <Anchor>Men's collection</Anchor>
       </Link>
-      <Link href='/contact'>          
+      <Link href='/women'>          
         <Anchor>Women's collection</Anchor>
       </Link>
-      <Link href='/contact'>          
+      <Link href='/kids'>          
         <Anchor>Kids collection</Anchor>
       </Link>
-      <Link href='/contact'>          
+      <Link href='/new'>          
         <Anchor>New collection</Anchor>
       </Link>
-      <Link href='/contact'>          
+      <Link href='/bestsellers'>          
         <Anchor>Bestsellers</Anchor>
       </Link>
       <br/>

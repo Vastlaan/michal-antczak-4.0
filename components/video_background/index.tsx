@@ -14,7 +14,7 @@ export default function VideoBackground({heading, para}: VideoBackgroundProps) {
       </video>
       <Heading1 color='snow'>{heading}</Heading1>
       <Line/>
-      <TextBold align='center' color='#5E5E5E'>{para}</TextBold>
+      <TextBold align='center' color='snow'>{para}</TextBold>
     </Container>
   )
 }

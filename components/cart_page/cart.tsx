@@ -11,13 +11,7 @@ import {retrieveCartFromLocalStorage} from '../../utils'
 
 export default function Cart() {
 
-  const { state, dispatch } = useContext(Context);
-
-  useEffect(()=>{
-      if(typeof window !== undefined){
-          dispatch({type:'updateCart', cart: retrieveCartFromLocalStorage()})
-      }
-  },[])
+  const { state } = useContext(Context);
 
   return (
     <SectionNarrow>
@@ -31,7 +25,7 @@ export default function Cart() {
         <FlexCol align='flex-start'>
           {state.cart.length>0 ? state.cart.map((item, i)=>{
             return(
-              <Item key={i} item={item}/>
+              <Item key={`${i}-${item.item.displayName}`} item={item}/>
             )
           }): <TextBold margin='0 auto'>Your shopping cart is empty</TextBold>}
         </FlexCol> 

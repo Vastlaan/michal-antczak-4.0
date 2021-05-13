@@ -41,7 +41,7 @@ export default function SearchBoxComponent() {
       </SearchBox>
       {filteredProducts.length > 0 && searchString.length > 0 ? <ResultsContainer><SearchResults>
         <Close type='button' aria-label='close search results' onClick={()=>setSearchString("")}><CgCloseR/></Close>
-        {filteredProducts.map((prod,i)=><ProductSmall key={i} item={prod} />)}  
+        {filteredProducts.map((prod,i)=><ProductSmall key={`${i}-${prod.displayName}`} item={prod} />)}  
       </SearchResults></ResultsContainer>: null}
     </>
   )
