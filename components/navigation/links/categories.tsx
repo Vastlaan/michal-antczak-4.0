@@ -23,18 +23,16 @@ export default function CategoriesComponent({categories}:NavigationProps) {
   return (
     <Categories>
       {
-        categories.map((cat,i)=> cat.parent===null && <Link key={i} href={cat.link}>
-          <LinkContainer onMouseOver={()=>displaySubcategories(cat.type)} onMouseLeave={()=>hideSubcategories()}>
-            <LinkItem>{cat.displayName}</LinkItem>
+        categories.map((cat,i)=> cat.parent===null &&
+          <LinkContainer key={i} onMouseOver={()=>displaySubcategories(cat.type)} onMouseLeave={()=>hideSubcategories()}>
+            <Link href={cat.link}><LinkItem>{cat.displayName}</LinkItem></Link>
             <Subcategories top={top.type===cat.type && top.value}>
               <Heading3 align='left'>{cat.displayName}</Heading3>
               {categories.map((sub,i)=> sub.parent===cat.type && <Link href={sub.link} key={`${i}-sub`}>
                 <Sub>{sub.displayName}</Sub>
               </Link>)}
             </Subcategories>
-          </LinkContainer>
-          
-        </Link>)
+          </LinkContainer>)
       }
     </Categories>
   )
