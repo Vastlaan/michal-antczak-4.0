@@ -118,12 +118,12 @@ export const Anchor = styled.a<FlexibleComponentProps>`
   cursor: pointer;
   transition: all .3s;
 
-  ${()=>respond('m','margin: .3rem 0;')}
+  ${()=>respond('m','margin: .6rem 0;')}
 
   &::before{
       content: '';
       position: absolute;
-      bottom: -1rem;
+      bottom: -.6rem;
       left: 0;
       width: 100%;
       height: 1px;

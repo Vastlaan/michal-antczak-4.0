@@ -23,7 +23,7 @@ export default function LinksComponent({isSmall}: LinksProps) {
     <LinksContainer>
       <Link href='/cart'>
         <Cart>
-          <LinkSmall  margin="0 1.9rem 0 0">
+          <LinkSmall aria-label='cart' margin="0 1.9rem 0 0">
             <GiShoppingBag/>
             {isSmall?"":"Cart"}
           </LinkSmall>
@@ -32,7 +32,7 @@ export default function LinksComponent({isSmall}: LinksProps) {
       </Link>
 
       <Link href='/contact'>
-        <LinkSmall margin="0 1.9rem 0 0">
+        <LinkSmall aria-label='contact' margin="0 1.9rem 0 0">
           <RiCustomerServiceLine/>
           {isSmall?"":"Customer Service"}
         </LinkSmall>        

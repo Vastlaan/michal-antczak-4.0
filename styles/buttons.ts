@@ -3,7 +3,9 @@ import {fonts} from './fonts'
 import {FlexibleComponentProps} from '../types'
 import { respond } from '.'
 
-export const LinkSmall = styled.a<FlexibleComponentProps>`
+export const LinkSmall = styled.button<FlexibleComponentProps>`
+  border: none;
+  background-color: transparent;
   text-decoration: none;
   display: flex;
   align-items: center;
