@@ -7,15 +7,11 @@ import Color from './color'
 import Price from './price'
 import { FlexRow,  ButtonSecondary} from '../../../styles'
 import Error from '../../utils/error_message'
-import {ProductProps} from '../../../types'
+import {ProductProps, ErrorObject} from '../../../types'
 import {storeCartInLocalStorage} from '../../../utils'
 
 interface DetailsProps{
   products: ProductProps[]
-}
-interface Error {
-  field?: string;
-  message?: string
 }
 
 export default function DetailsComponent({products}:DetailsProps) {
@@ -26,7 +22,7 @@ export default function DetailsComponent({products}:DetailsProps) {
 
   const [chosenSize, setChosenSize] = useState()
   const [chosenColor, setChosenColor] = useState()
-  const [error, setError] = useState<Error>({})
+  const [error, setError] = useState<ErrorObject>({})
 
   const firstProductInStock = products[0]
   

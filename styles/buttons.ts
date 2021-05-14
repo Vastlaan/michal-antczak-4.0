@@ -33,7 +33,7 @@ export const LinkSmall = styled.a<FlexibleComponentProps>`
   }
 `
 export const LinkExtra = styled.button<FlexibleComponentProps>`
-  backgroun-color: transparent;
+  background-color: transparent;
   border: none;
   margin: ${p=>p.margin?p.margin:'0'};
   font-size: 1.4rem;

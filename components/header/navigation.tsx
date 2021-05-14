@@ -43,10 +43,15 @@ export default function NavigationComponent() {
 const Navigatie = styled.div`
     align-self: flex-start;
     display: flex;
+    background-color: rgba(18,18,16,.9);
+    padding: 0 1.4rem 0 4.1rem;
+    transform: translateX(-2.7rem);
+    box-shadow: .2rem .3rem .2rem rgba(0,0,0,.3);
 `
 const Path = styled.p`
     font-family: ${fonts.heading};
     font-size: 1.9rem;
+    line-height: 1.3;
     color: ${p=>p.theme.grey2};
     font-weight: 600;
     transition: all .3s;

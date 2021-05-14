@@ -2,6 +2,10 @@ import styled from 'styled-components'
 import respond from './respond'
 import {FlexibleComponentProps} from '../types'
 
+interface ContainerAnimatedProps{
+  animation?: string;
+}
+
 // SECTIONS AND HEADERS
 
 export const SectionNarrow = styled.section<FlexibleComponentProps>`
@@ -13,7 +17,7 @@ export const SectionNarrow = styled.section<FlexibleComponentProps>`
 `
 export const ContainerNarrow = styled.div<FlexibleComponentProps>`
   max-width: 996px;
-  margin: 0 2.7rem;
+  margin: 0;
   padding: 1.4rem;
 
   ${(p)=>respond('s',`margin:${p.margin?p.margin:'0 auto'}`)}
@@ -44,6 +48,7 @@ export const FlexCol = styled.div<FlexibleComponentProps>`
   justify-content: ${p=>p.justify?p.justify:'center'};
   align-items: ${p=>p.align?p.align:'center'};
   background-color: ${p=>p.background?p.background:'transparent'};
+  width: ${p=>p.wide?p.wide:'auto'};
 `
 
 export const ProductsConatiner = styled.div`
@@ -61,12 +66,13 @@ export const Field = styled.div`
 
   label{
     font-size: 1.9rem;
+    color: ${p=>p.color?p.color:p.theme.grey5};
 
     sup{
       color: ${p=>p.theme.primary};
     }
   }
-  input{
+  input, textarea{
     border: 1px solid rgba(0,0,0,.3);
     margin: .9rem 0;
     padding: .9rem 2.7rem;
@@ -74,5 +80,35 @@ export const Field = styled.div`
     font-size: 1.6rem;
     color: ${p=>p.theme.grey4};
   }
+  textarea{
+    width:100%;
+  }
 
+`
+export const ContainerAnimated = styled.div<ContainerAnimatedProps>`
+  transform: ${p=>p.animation==='mx'?'translateX(-100px)':p.animation==='px'?'translateX(100px)':'translate(0, 100px)'};
+  opacity: 0;
+  visibility: hidden;
+  overflow:hidden;
+`
+export const ContactBox = styled.div`
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0rem 2.7rem 2.7rem 2.7rem;
+  padding: 1.4rem;
+  transition: all .3s;
+`
+export const Icon = styled.div<FlexibleComponentProps>`
+  display:flex;
+  margin: ${p=>p.margin?p.margin:'0'};
+  padding: ${p=>p.padding?p.padding:'0'};
+  justify-content: ${p=>p.justify?p.justify:'center'};
+  align-items: ${p=>p.align?p.align:'center'};  
+  svg{
+    margin: 1.4rem 0;
+    font-size: 4.7rem;
+    color: ${p=>p.color?p.color:p.theme.primary};
+  }
 `

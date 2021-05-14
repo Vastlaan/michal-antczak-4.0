@@ -101,3 +101,8 @@ export interface Action{
   cart?: Payload[]
 }
 export type IContext = { state: State; dispatch?: React.Dispatch<Action>; }
+
+export interface ErrorObject{
+  field?: string;
+  message?: string;
+}

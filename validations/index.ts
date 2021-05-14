@@ -115,6 +115,22 @@ export function validatePayment(payment: string){
   }
 }
 
+export function validateMessage(message: string){
+  if (!message) {
+        return {
+            field: "message",
+            message: "Message field must be provided",
+        };
+    }
+    if (message.length > 500) {
+        return {
+            field: "message",
+            message: "Message filed must not be greater than 500 characters",
+        };
+    }
+    return {field: "", message:""}
+}
+
 interface IValidateAll{
   name: string;
   surname: string;
@@ -139,5 +155,16 @@ export function validateCheckoutForm({name, surname, email, phone, street, numbe
   if(validatePostcode(postcode).field){return validatePostcode(postcode)}
   if(validatePayment(payment).field){return validatePayment(payment)}
 
+  return {field: "", message:""}
+}
+interface IValidateContact{
+  name: string;
+  email: string;
+  message: string;
+}
+export function validateContactForm({name, email, message}:IValidateContact){
+  if(validateName(name).field){return validateName(name)}
+  if(validateEmail(email).field){return validateEmail(email)}
+  if(validateMessage(message).field){return validateMessage(message)}
   return {field: "", message:""}
 }
