@@ -44,7 +44,7 @@ export default function FormComponent() {
       <ContainerNarrow>
         <Form onSubmit={submitForm}>
           <Line wide='15rem'/>
-          <Heading2 margin='0 0 2.7rem 0' color='snow'>Contact Form</Heading2>
+          <Heading2 margin='1.4rem 0 2.7rem 0' color='snow'>Contact Form</Heading2>
           <Text align='left' color='snow'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel animi quod asperiores provident error ad vero minima? Deleniti autem sed adipisci quas officia repudiandae facilis!</Text>
 
           <FieldsContainer>

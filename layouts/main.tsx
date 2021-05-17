@@ -16,7 +16,7 @@ export default function MainLayoutComponent({children, categories}: LayoutProps)
   const { state, dispatch } = useContext(Context);
 
   useEffect(()=>{
-      if(typeof window !== undefined){
+      if(typeof window !== undefined && state.cart.length < 1){
           dispatch({type:'updateCart', cart: retrieveCartFromLocalStorage()})
       }
   },[])
