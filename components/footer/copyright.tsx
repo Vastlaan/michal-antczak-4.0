@@ -1,43 +1,27 @@
-import styled from 'styled-components'
-import {fonts} from '../../styles'
+import styled, { withTheme } from "styled-components";
+import { respond, TextLong } from "../../styles";
 
-export default function CopyrightComponent() {
+function Copyright({ theme }) {
   return (
-    <Copyright>
-      <p>
-        &copy; {new Date().getFullYear()} Copyright{" "}
-        Golen Shoe. All rights reserved.
-        Designed by <a href="https://michalantczak.com">Michal Antczak</a>
-      </p>
-    </Copyright>
-  )
+    <Container>
+      <TextLong
+        size="1.4rem"
+        wide="55rem"
+        color={theme.grey}
+      >{`@ ${new Date().getFullYear()} Michal Antczak. All rights reserved.`}</TextLong>
+    </Container>
+  );
 }
-const Copyright = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding:.9rem;
-    border-top: 1px solid rgba(255,255,255,.3);
-    p {
-        font-size: 1.2rem;
-        line-height: 1;
-        letter-spacing: 0.2rem;
-        font-weight: 300;
-        font-family: ${fonts.heading};
-        color: ${(p) => p.theme.white};
-        text-align: center;
-        a {
-            margin: .9rem 0 0 0;
-            padding: .6rem .9rem;
-            background-color: ${p=>p.theme.primary};
-            color: ${p=>p.theme.white};
-            display: inline-block;
-            transition: all .3s;
-            box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
-            &:hover{
-                transform: rotate(4deg) scale(1.05);
-            }
-        }
-    }
+export default withTheme(Copyright);
+
+const Container = styled.div`
+  display: flex;
+  grid-column: 1/-1;
+  grid-row: 10/11;
+  width: 100%;
+  aling-items: center;
+  margin-top: 2.7rem;
+  padding: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  ${respond("m", "grid-row: 4/5;")}
 `;

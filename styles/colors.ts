@@ -1,16 +1,12 @@
-export const lightTheme ={
-  primary: "#ba181b",
-  primaryLight: "#e5383b",
-  primaryDark: "#660708",
-
-  secondary: "#f6da1c",
-
-  grey1: "#EFF0EF",
-  grey2:"#dddfdd",
-  grey3: "#5E5E5E",
-  grey4: "#4d5057",
-  grey5: "#1b1b1b",
-
-  black: "#242525",
-  white: "#ebedeb"
-}
+export const lightTheme = {
+  primary: "#1989b5",
+  secondary: "#e9002d",
+  greyPrimary: "#222",
+  greyTertiary: "#b8b3a9",
+  greyDark: "#4a4a4a",
+  greySecondary: "#f2f2f2",
+  grey: "#b8b3a9",
+  white: "white",
+  gold: "#e47911",
+  green: "#25D366",
+};

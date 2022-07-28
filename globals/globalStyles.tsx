@@ -1,10 +1,10 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { respond, fonts } from "../styles";
-import {ThemeProps} from '../types'
+import { ThemeProps } from "../types";
 
 export default function GlobalStyles() {
-    return <StylesConatiner />;
+  return <StylesConatiner />;
 }
 const StylesConatiner = createGlobalStyle<ThemeProps>`
   *,
@@ -14,29 +14,28 @@ const StylesConatiner = createGlobalStyle<ThemeProps>`
       padding: 0;
       box-sizing: inherit;
       line-height: inherit;
-      ::-moz-scrollbar-width: thin;
+      scrollbar-width: thin;
       font-family: inherit;
-      
-      
   }
   &::-webkit-scrollbar{display: block; width: 7px;}
-  &::-webkit-scrollbar-track { background: ${p=>p.theme.grey5};}
-  &::-webkit-scrollbar-thumb { background: ${p=>p.theme.grey2};  }
+  &::-webkit-scrollbar-track { background: ${(p) => p.theme.greySecondary};}
+  &::-webkit-scrollbar-thumb { background: ${(p) => p.theme.greyDark};  }
   html{
       font-size: 50%;
       box-sizing: border-box;
       font-family: ${fonts.para};
       line-height: 1.3;
       ${() => respond("xs", `font-size:30%;`)}
-      ${() => respond("l", `font-size:55%;`)}     
-      ${() => respond("xxl", `font-size:62.5%;`)}
+      ${() => respond("l", `font-size:55%;`)}    
+      ${() => respond("xl", `font-size:62.5%;`)} 
+      ${() => respond("xxl", `font-size:65%;`)}
       ${() => respond("tv", `font-size:100%;`)}
       ${() => respond("m", "line-height: 1.6;")};
   }
   
   body{
       overflow-x: hidden;
-      background-color: ${(p) => p.theme.grey1};
+      background-color: ${(p) => p.theme.greyPrimary};
       height: 100%;
   }
   h1,h2,h3,h4,h5,h6{
@@ -63,13 +62,6 @@ const StylesConatiner = createGlobalStyle<ThemeProps>`
         outline: none;
         box-shadow: 0 0 5px ${(p) => p.theme.primary};
       }
-      color: ${(p) => p.theme.grey4}
-  }
-  small{
-      padding: .4rem .9rem;
-      background-color: ${p=>p.theme.primary};
-      color: ${p=>p.theme.grey1};
-      font-size: 1.4rem;
-      letter-spacing: .15rem;
+      color: ${(p) => p.theme.greyPrimary}
   }
 `;

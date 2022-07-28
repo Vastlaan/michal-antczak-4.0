@@ -1,21 +1,25 @@
-import styled from 'styled-components'
-import InfoStrip from './info_strip'
-import Links from './links'
-import {NavigationProps} from '../../types'
+import styled from "styled-components";
+import { slideDown, FlexRow } from "../../styles";
+import Core from "./core";
+import Menu from "./menu";
 
-export default function NavigationComponent({categories}:NavigationProps) {
+export default function NavigationComponent() {
   return (
     <Navigation>
-      <InfoStrip/>
-      <Links categories={categories}/>
+      <FlexRow justify="flex-start">
+        <Core />
+        <Menu />
+      </FlexRow>
     </Navigation>
-  )
+  );
 }
 
 const Navigation = styled.nav`
+  background-color: ${(p) => p.theme.greyPrimary};
+  animation: ${slideDown} 0.6s ease-out;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 99;
-`
+  width: 100vw;
+  z-index: 9;
+`;

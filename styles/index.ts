@@ -1,17 +1,42 @@
 // MEDIA QUERIES
-import respond from './respond'
+import respond from "./respond";
 // COLORS
-import {lightTheme} from './colors'
+import { lightTheme } from "./colors";
 // FONTS
-import {fonts} from './fonts'
+import { fonts } from "./fonts";
 // CONTAINERS
-import {Section,SectionNarrow, ContainerNarrow, FlexRow, FlexCol, ProductsConatiner, Field, ContactBox, ContainerAnimated,Icon } from './containers'
+import {
+  Section,
+  SectionNarrow,
+  ContainerNarrow,
+  FlexRow,
+  FlexCol,
+  ProductsConatiner,
+  Field,
+  ContactBox,
+  ContainerAnimated,
+  Icon,
+} from "./containers";
 // TYPOGRAPHY
-import {Logo,Heading1,Heading2,Heading3,Heading4, Text, TextSmall, Anchor, TextItalic,TextBold} from './typography'  
+import {
+  TextLong,
+  Text2,
+  Text,
+  Text3,
+  SpanBlue,
+  SpanColor,
+  SpanRed,
+  Heading3,
+  Heading4,
+  Heading2,
+  Heading1,
+} from "./typography";
 // BUTTONS
-import {LinkSmall,LinkExtra,LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmptySmall,ButtonEmpty} from './buttons'
+import { ButtonPrimary, ButtonEmpty, ButtonFull } from "./buttons";
 // DECO
-import {Line} from './decorations'
+import { Line } from "./decorations";
+// ANIMATIONS
+import { slideDown, slideFromLeft, slideFromRight, grow } from "./animations";
 
 export {
   // MEDIA QUERIES
@@ -21,11 +46,37 @@ export {
   //FONTS
   fonts,
   // CONTAINERS
-  Section,SectionNarrow, ContainerNarrow, FlexRow, FlexCol, ProductsConatiner,Field, ContactBox, ContainerAnimated,Icon,
+  Section,
+  SectionNarrow,
+  ContainerNarrow,
+  FlexRow,
+  FlexCol,
+  ProductsConatiner,
+  Field,
+  ContactBox,
+  ContainerAnimated,
+  Icon,
   // TYPOGRAPHY
-  Logo,Heading1,Heading2,Heading3,Heading4, Text, TextSmall, Anchor, TextItalic,TextBold,
+  TextLong,
+  Text2,
+  Text,
+  Text3,
+  SpanBlue,
+  SpanColor,
+  SpanRed,
+  Heading3,
+  Heading4,
+  Heading2,
+  Heading1,
   // BUTTONS
-  LinkSmall,LinkExtra, LinkItem, ButtonPrimary, ButtonSecondary, ButtonEmptySmall,ButtonEmpty,
+  ButtonPrimary,
+  ButtonEmpty,
+  ButtonFull,
   // DECO
   Line,
-}
+  //  ANIMATIONS
+  slideDown,
+  slideFromLeft,
+  slideFromRight,
+  grow,
+};
