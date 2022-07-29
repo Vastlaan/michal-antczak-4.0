@@ -5,15 +5,18 @@ import { ICertificate } from "../../../types";
 import { Context } from "../../../store";
 import { Heading3, Text, SpanBlue, Line } from "../../../styles";
 
-function CertificateComponent(
-  { title, issuedBy, year, url, image, theme }: ICertificate & ThemeProps<any>,
-  ref
-) {
+function CertificateComponent({
+  title,
+  issuedBy,
+  year,
+  url,
+  image,
+  theme,
+}: ICertificate & ThemeProps<any>) {
   const { state, dispatch } = useContext(Context);
 
   return (
     <Certificate
-      ref={ref}
       role="button"
       aria-label="view certificate full screen"
       onClick={() => {
@@ -46,7 +49,7 @@ function CertificateComponent(
     </Certificate>
   );
 }
-export default withTheme(forwardRef(CertificateComponent));
+export default withTheme(CertificateComponent);
 
 const Certificate = styled.div`
   margin: 1.4rem;

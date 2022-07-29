@@ -5,7 +5,7 @@ import respond from "./respond";
 export const ButtonPrimary = styled.button<FlexibleComponentProps>`
   padding: 1rem 1.4rem;
   font-size: 1.9rem;
-  background-color: ${(p) => p.theme.secondary};
+  background-color: ${(p) => p.color || p.theme.secondary};
   border: none;
   color: ${(p) => p.theme.greySecondary};
   transition: all 0.3s;

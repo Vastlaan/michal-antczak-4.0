@@ -60,7 +60,6 @@ const StylesConatiner = createGlobalStyle<ThemeProps>`
   input, textarea{
       &:active, :focus{
         outline: none;
-        box-shadow: 0 0 5px ${(p) => p.theme.primary};
       }
       color: ${(p) => p.theme.greyPrimary}
   }

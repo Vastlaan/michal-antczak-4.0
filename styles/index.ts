@@ -28,6 +28,7 @@ import {
   SpanRed,
   Heading3,
   Heading4,
+  Heading5,
   Heading2,
   Heading1,
 } from "./typography";
@@ -66,6 +67,7 @@ export {
   SpanRed,
   Heading3,
   Heading4,
+  Heading5,
   Heading2,
   Heading1,
   // BUTTONS

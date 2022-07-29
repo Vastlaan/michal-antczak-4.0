@@ -26,7 +26,7 @@ function CloudComputing({ theme }) {
     <SectionNarrow>
       <FlexCol margin="4.7rem auto">
         <Line wide="10rem" margin="1.4rem auto" />
-        <Text3 ref={refItems.current[0]}>Iterrative software development</Text3>
+        <Text3 ref={refItems.current[0]}>Agile software development</Text3>
         <ImageWrapper ref={refItems.current[1]}>
           <Image
             src={ScrumMasterBadge}
@@ -44,8 +44,10 @@ function CloudComputing({ theme }) {
           Certified Professional Scrum Master
         </Heading1>
         <Text ref={refItems.current[3]} align="center">
-          As a software engineer I develop products following the best practices
-          of itterative software development framework.
+          As a software engineer I develop complex products working
+          transparently to enhance work introspection and enable best adaptation
+          to changing requirements and circumstances. I always try to follow
+          Scrum principles as defined in the Scrum Guide.
         </Text>
       </FlexCol>
     </SectionNarrow>

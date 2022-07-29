@@ -58,6 +58,21 @@ export const Heading4 = styled.h4<FlexibleComponentProps>`
     color: ${(p) => p.theme.secondary};
   }
 `;
+export const Heading5 = styled.h3<FlexibleComponentProps>`
+  font-family: ${fonts.heading};
+  font-size: 2.7rem;
+  color: ${(p) => p.theme.greyPrimary};
+  font-weight: 600;
+  max-width: 50rem;
+  margin: ${(p) => p.margin || "0"};
+
+  span {
+    color: ${(p) => p.theme.primary};
+  }
+  strong {
+    color: ${(p) => p.theme.secondary};
+  }
+`;
 
 export const Text = styled.p<FlexibleComponentProps>`
   margin: ${(p) => p.margin || "0"};
@@ -70,7 +85,7 @@ export const Text = styled.p<FlexibleComponentProps>`
 
 export const Text2 = styled.p<FlexibleComponentProps>`
   margin: ${(p) => p.margin || "0"};
-  font-size: 1.6rem;
+  font-size: ${(p) => p.size || "1.6rem"};
   color: ${(p) => p.color || p.theme.greyTertiary};
   font-weight: 700;
   max-width: 50rem;

@@ -7,19 +7,15 @@ import { certificates } from "./certificates_data";
 import useAnimation from "../../../hooks/useAnimation";
 
 export default function Main() {
-  const refObject = useRef([]);
-  for (let i = 0; i < certificates.length; i++) {
-    refObject.current.push(createRef());
-  }
-  useAnimation({ type: "bulkShowUp", refObject });
+  // const refObject = useRef([]);
+  // for (let i = 0; i < certificates.length; i++) {
+  //   refObject.current.push(createRef());
+  // }
+  // useAnimation({ type: "bulkShowUp", refObject });
   return (
     <Container>
       {certificates.map((certificate: ICertificate, i) => (
-        <Certificate
-          ref={refObject.current[i]}
-          key={certificate.title}
-          {...certificate}
-        />
+        <Certificate key={certificate.title} {...certificate} />
       ))}
     </Container>
   );
