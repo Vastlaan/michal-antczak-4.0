@@ -7,6 +7,7 @@ import {
   SpanBlue,
   SpanRed,
   ButtonPrimary,
+  respond,
 } from "../../../styles";
 import BackgroundImage from "../../../public/img/slide-1.jpg";
 import Link from "next/link";
@@ -52,7 +53,7 @@ const Container = styled.div<IProps>`
   inset: 0;
   color: ${(p) => p.theme.white};
   overflow: hidden;
-  padding: 2.7rem;
+  padding: 2.7rem 1.4rem;
   transition: all 0s;
 
   background-image: url(${BackgroundImage.src});
@@ -60,6 +61,8 @@ const Container = styled.div<IProps>`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  ${respond("m", "padding: 2.7rem;")}
 `;
 const Wrapper = styled.div`
   max-width: 1255px;

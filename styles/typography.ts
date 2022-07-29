@@ -14,6 +14,7 @@ export const Heading1 = styled.h1<FlexibleComponentProps>`
   color: ${(p) => p.color || p.theme.white};
   font-weight: 800;
   max-width: ${(p) => p.wide || "50rem"};
+  text-align: ${(p) => (p.align ? p.align : "left")};
 
   span {
     color: ${(p) => p.theme.primary};

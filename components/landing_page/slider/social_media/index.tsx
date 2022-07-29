@@ -34,7 +34,8 @@ const Container = styled.div<IProps>`
   inset: 0;
   color: ${(p) => p.theme.white};
   overflow: hidden;
-  padding: 2.7rem;
+  padding: 2.7rem 1.4rem;
+  ${respond("m", "padding: 2.7rem;")}
 `;
 const Wrapper = styled.div`
   max-width: 1255px;

@@ -41,8 +41,10 @@ const Header = styled.header`
   overflow: hidden;
   position: relative;
   width: 100%;
-  padding: 1.4rem;
+  padding: 1.4rem 0;
   padding-top: 10rem;
+
+  ${respond("m", "padding: 1.4rem;")}
 `;
 
 const Layout = styled.div`

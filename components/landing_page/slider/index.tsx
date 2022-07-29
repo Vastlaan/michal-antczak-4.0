@@ -55,7 +55,7 @@ const Layout = styled.div`
 `;
 const ControlButtonsWrapper = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: -1.4rem;
   left: 50%;
   transform: translate(-50%);
   display: flex;

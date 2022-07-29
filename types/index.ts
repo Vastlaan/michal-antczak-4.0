@@ -52,10 +52,12 @@ export interface FlexibleComponentProps {
 export interface Payload {
   isNavMenuOpen?: boolean;
   activeSkills?: "all" | "frontend" | "backend" | "devops" | "serverless";
+  activeCertificate?: false | StaticImageData;
 }
 export interface State {
   isNavMenuOpen: boolean;
   activeSkills: "all" | "frontend" | "backend" | "devops" | "serverless";
+  activeCertificate: false | StaticImageData;
 }
 export interface Action {
   type: string;
@@ -84,4 +86,11 @@ export interface IPortfolio {
   description: string;
   urlWebsite: string;
   urlGithub?: string;
+}
+export interface ICertificate {
+  title: string;
+  image: StaticImageData;
+  year: string;
+  issuedBy: string;
+  url?: string;
 }

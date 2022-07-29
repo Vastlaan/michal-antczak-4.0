@@ -4,6 +4,7 @@ import { State, Action, IContext } from "../types";
 export const initialState: State = {
   isNavMenuOpen: false,
   activeSkills: "all",
+  activeCertificate: false,
 };
 
 export const reducer = (state: State, action: Action): State => {
@@ -13,6 +14,9 @@ export const reducer = (state: State, action: Action): State => {
       return { ...state };
     case "setActiveSkills":
       state.activeSkills = action.payload.activeSkills;
+      return { ...state };
+    case "setActiveCertificate":
+      state.activeCertificate = action.payload.activeCertificate;
       return { ...state };
 
     default:

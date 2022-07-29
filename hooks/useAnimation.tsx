@@ -26,7 +26,6 @@ export default function useAnimation({ type, refObject }: IProps) {
           scrollTrigger: {
             trigger: target,
             start: "top bottom",
-            markers: true,
             toggleActions: "restart reset restart reset", // good examples here: https://codepen.io/GreenSock/pen/LYVKWGo
           },
         }
@@ -39,7 +38,7 @@ export default function useAnimation({ type, refObject }: IProps) {
           transformOrigin: "center center",
         },
         {
-          delay: 0.5,
+          delay: 0.25,
           duration: 0.5,
           autoAlpha: 1,
           scrollTrigger: {
@@ -56,8 +55,8 @@ export default function useAnimation({ type, refObject }: IProps) {
         stagger: 0.25,
         scrollTrigger: {
           trigger: target,
-          start: "top bottom",
-          toggleActions: "restart reset restart reset", // good examples here: https://codepen.io/GreenSock/pen/LYVKWGo
+          start: "top center",
+          toggleActions: "restart none none none", // good examples here: https://codepen.io/GreenSock/pen/LYVKWGo
         },
       }),
     bulkSlideFromRight: (target) =>
@@ -86,7 +85,6 @@ export default function useAnimation({ type, refObject }: IProps) {
   // observe changing height of document.body to refresh scroll trigger postioning
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
-      console.log("called");
       ScrollTrigger.refresh();
     });
     resizeObserver.observe(document.body);
@@ -96,6 +94,7 @@ export default function useAnimation({ type, refObject }: IProps) {
     const target = Array.isArray(refObject.current)
       ? refObject.current.map((item) => item.current)
       : refObject.current;
+
     animations[type](target);
   }, []);
 }

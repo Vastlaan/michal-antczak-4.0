@@ -42,14 +42,14 @@ const Logo = styled.div`
   padding: 0.9rem 1.4rem;
   border: 1px solid ${(p) => p.color || p.theme.white};
   border-radius: 5px;
-  width: 25rem;
+  width: 30rem;
   height: 25rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   box-shadow: 0 0 1rem ${(p) => `${p.color}4d` || p.theme.white};
   position: relative;
-  ${respond("m", "margin: 0 3.7rem 0 0;")};
+  ${respond("m", "margin: 0 3.7rem 0 0;width: 25rem; height: 25rem;")};
 
   &::after {
     content: "";

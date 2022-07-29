@@ -7,7 +7,7 @@ export default function Main() {
   return (
     <Container>
       {portfolio.map((project: IPortfolio) => (
-        <Project {...project} />
+        <Project key={project.title} {...project} />
       ))}
     </Container>
   );

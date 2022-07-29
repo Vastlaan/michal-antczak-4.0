@@ -25,11 +25,11 @@ export default function Skills() {
 const Layout = styled.div`
   border: 5px solid ${(p) => p.theme.primary};
   background-color: ${(p) => p.theme.greySecondary};
-  padding: 4.7rem;
+  padding: 4.7rem 1.4rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2.7rem;
   min-height: 50rem;
 
-  ${respond("m", " grid-template-columns: 1fr 1fr;")};
+  ${respond("m", " grid-template-columns: 1fr 1fr; padding: 4.7rem;")};
 `;

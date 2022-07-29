@@ -62,8 +62,9 @@ export const portfolio: IPortfolio[] = [
     image: NoirFataleImage,
     year: "2018",
     techStack: ["GatsbyJs (React)", "CSS Modules"],
-    description: `It's my private music project website. Making music is my big passion. This website has been created with build on React GatsbyJs and CSS modules. I invite you to visit and listen to my dark,
-    original, electronic music.`,
+    description: `It's my private music project website. Making music is my big passion. 
+    This website has been created with GatsbyJs and CSS modules. 
+    I invite you to visit and listen to my  original, dark, electronic music.`,
     urlWebsite: "https://noirfatale.com",
   },
   {
@@ -93,7 +94,7 @@ export const portfolio: IPortfolio[] = [
   {
     title: "La Casa - Restaurant",
     image: LaCasaImage,
-    year: "2020",
+    year: "2019",
     techStack: [
       "GatsbyJs (React)",
       "CSS + styled-components",

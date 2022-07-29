@@ -11,7 +11,7 @@ function Companies({ theme }) {
   useAnimation({ type: "slideUp", refObject: refItems });
 
   return (
-    <SectionNarrow margin="6.7rem auto">
+    <SectionNarrow margin="6.7rem auto 2.7rem auto">
       <FlexCol margin="0 auto">
         <Line wide="10rem" margin="1.4rem auto" />
         <Text3 ref={refItems.current[0]}>top tech companies</Text3>

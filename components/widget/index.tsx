@@ -1,6 +1,6 @@
-import styled, { withTheme } from "styled-components";
+import styled from "styled-components";
 import Link from "next/link";
-import { Heading3, TextLong } from "../../styles";
+import { Heading3, TextLong, respond } from "../../styles";
 import { IconType } from "react-icons";
 
 interface IWidget {
@@ -43,7 +43,9 @@ const StyledWidget = styled.div`
   transition: all 0.3s;
   cursor: pointer;
   margin-bottom: 1.9rem;
-  min-width: 50rem;
+  min-width: 35rem;
+
+  ${respond("m", "min-width: 50rem;")}
 
   svg {
     margin-right: 1.9rem;
