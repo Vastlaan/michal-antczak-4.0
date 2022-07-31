@@ -8,16 +8,35 @@ import {
   SpanBlue,
   ButtonPrimary,
 } from "../../styles";
+import Confirmation from "./confiramtion";
 
 function Form({ theme }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const [displayConfirmation, setDisplayConfirmation] = useState(false);
+
   function sendForm(e) {
     e.preventDefault();
-    const data = { name, email, message };
-    console.log({ data });
+    const data = { name, email, msg: message };
+    fetch("/api/submitContactForm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((d) => {
+        if (d.msg === "Sucess") {
+          return setDisplayConfirmation(true);
+        }
+      })
+      .catch((e) => console.error(e));
   }
 
   return (
@@ -81,6 +100,13 @@ function Form({ theme }) {
       >
         <span>Send</span>
       </ButtonPrimary>
+      {displayConfirmation && (
+        <Confirmation
+          setDisplayConfirmation={setDisplayConfirmation}
+          heading="Thank you for your message"
+          text="I will response to your message as soon as possible!"
+        />
+      )}
     </Container>
   );
 }

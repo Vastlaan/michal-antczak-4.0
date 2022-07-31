@@ -5,6 +5,7 @@ export const initialState: State = {
   isNavMenuOpen: false,
   activeSkills: "all",
   activeCertificate: false,
+  isAnalyticsAgreed: false,
 };
 
 export const reducer = (state: State, action: Action): State => {
@@ -18,7 +19,9 @@ export const reducer = (state: State, action: Action): State => {
     case "setActiveCertificate":
       state.activeCertificate = action.payload.activeCertificate;
       return { ...state };
-
+    case "setAnalyticsAgreed":
+      state.isAnalyticsAgreed = action.payload.isAnalyticsAgreed;
+      return { ...state };
     default:
       return state;
   }

@@ -53,11 +53,13 @@ export interface Payload {
   isNavMenuOpen?: boolean;
   activeSkills?: "all" | "frontend" | "backend" | "devops" | "serverless";
   activeCertificate?: false | StaticImageData;
+  isAnalyticsAgreed?: boolean;
 }
 export interface State {
   isNavMenuOpen: boolean;
   activeSkills: "all" | "frontend" | "backend" | "devops" | "serverless";
   activeCertificate: false | StaticImageData;
+  isAnalyticsAgreed: boolean;
 }
 export interface Action {
   type: string;
