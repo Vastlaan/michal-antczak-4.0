@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled, { withTheme } from "styled-components";
 import {
   respond,
-  Heading5,
+  Heading1,
   Text2,
   fonts,
   SpanBlue,
@@ -41,9 +41,9 @@ function Form({ theme }) {
 
   return (
     <Container onSubmit={sendForm}>
-      <Heading5 margin="0 0 1.4rem 0" color={theme.greyPrimary}>
+      <Heading1 margin="0 0 1.4rem 0" color={theme.greyPrimary}>
         <span>Contact</span> Form
-      </Heading5>
+      </Heading1>
       <Text2 size="1.4rem">
         Do you have a question or comment? Fill in the contact form below, I
         will answer your question as soon as possible. Do you have a question
@@ -128,7 +128,7 @@ const Container = styled.form`
 const InputsWrapper = styled.div`
   margin: 2.7rem 0 1.4rem 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 `;
 const Field = styled.div`
   display: flex;
@@ -147,6 +147,7 @@ const Field = styled.div`
     background-color: none;
     padding: 1.4rem;
     font-size: 1.4rem;
+    margin-bottom: 1.9rem;
 
     &:focus,
     :active {
@@ -158,7 +159,6 @@ const Field = styled.div`
     background-color: none;
     padding: 1.4rem;
     font-size: 1.4rem;
-    max-width: 44rem;
 
     &:focus,
     :active {

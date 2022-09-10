@@ -39,7 +39,7 @@ function SocialMedia({ theme }) {
         <div ref={refItems.current[3]}>
           <Widget
             title="LinkedIn"
-            link="https://www.linkedin.com/michal-antczak"
+            link="https://www.linkedin.com/in/michal-antczak"
             icon={FaLinkedin}
             color={theme.primary}
             ariaLabel="link to LinkedIn profile"

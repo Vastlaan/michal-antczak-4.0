@@ -39,7 +39,7 @@ function SocialMediaWidgets({ theme }) {
       />
       <Widget
         title="LinkedIn"
-        link="https://www.linkedin.com/michal-antczak"
+        link="https://www.linkedin.com/in/michal-antczak"
         icon={FaLinkedin}
         color={theme.primary}
         ariaLabel="link to LinkedIn profile"
