@@ -5,7 +5,6 @@ import Head from "../../components/seo";
 import BlogPage from "../../components/blog_page";
 
 export default function Blog({ posts }) {
-  console.log({ posts });
   return (
     <Layout>
       <Head
