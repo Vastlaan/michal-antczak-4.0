@@ -96,3 +96,24 @@ export interface ICertificate {
   issuedBy: string;
   url?: string;
 }
+
+export interface StrapiTimestamps {
+  updated_at: string;
+  published_at: string;
+  created_at: string;
+}
+
+export interface Categories extends StrapiTimestamps {
+  id: number;
+  name: string;
+}
+
+export interface Post extends StrapiTimestamps {
+  id: number;
+  title: string;
+  image: string | null;
+  date: string;
+  categories: Categories[];
+  content: string;
+  time: string;
+}
