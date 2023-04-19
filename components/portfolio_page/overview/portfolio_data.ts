@@ -3,27 +3,20 @@ import ChefsbookImage from "../../../public/img/project-chefsbook.jpg";
 import FirstHairImage from "../../../public/img/project-first-hair.jpg";
 import LaCasaImage from "../../../public/img/project-restaurant.jpg";
 import GoldenShoeImage from "../../../public/img/project-webshop.jpg";
-import ResumeImage from "../../../public/img/project-resume.jpg";
+import VuebankImage from "../../../public/img/Vuebank_image.jpg";
 import ElementorImage from "../../../public/img/project-elementor.jpg";
 import NoirFataleImage from "../../../public/img/project-noir.jpg";
 import BarberImage from "../../../public/img/project-barber.jpg";
 
 export const portfolio: IPortfolio[] = [
   {
-    title: "Chefsbook - handy tool for professional kitchen",
-    image: ChefsbookImage,
-    year: "2021",
-    techStack: [
-      "NextJs (React)",
-      "NodeJs",
-      "CSS + styled-components",
-      "Postgresql + JWT",
-    ],
-    description: `Chefsbook application has been dedicated to all professional chefs wanting to manage their kitchen in the digital way. 
-    The functionality consist of: creating and storing events like reservations in the calendar,
-    handling team members and planning their schedule, creating preparation lists for given date, storing recipes with photos,
-     managing own profile.`,
-    urlWebsite: "https://chefsbook.org",
+    title: "VueBank",
+    image: VuebankImage,
+    year: "2023",
+    techStack: ["Vue3", "NodeJs", "SCSS"],
+    description: `VueBank is a hypotetic bank which is implemented as a POC for developing application in Vue 3. 
+    It's main functionality is built around Accounts page which allows to drill in the transactions.`,
+    urlWebsite: "https://vuebank.michalantczak.com",
   },
   {
     title: "First Hair kapsalon",
@@ -56,6 +49,22 @@ export const portfolio: IPortfolio[] = [
     stores shopping cart in in localStorage object. You can register or buy without logging in. Checkout is safe and
     supports many popular payment methods.`,
     urlWebsite: "https://goldenshoe.michalantczak.com/",
+  },
+  {
+    title: "Chefsbook - handy tool for professional kitchen",
+    image: ChefsbookImage,
+    year: "2021",
+    techStack: [
+      "NextJs (React)",
+      "NodeJs",
+      "CSS + styled-components",
+      "Postgresql + JWT",
+    ],
+    description: `Chefsbook application has been dedicated to all professional chefs wanting to manage their kitchen in the digital way. 
+    The functionality consist of: creating and storing events like reservations in the calendar,
+    handling team members and planning their schedule, creating preparation lists for given date, storing recipes with photos,
+     managing own profile.`,
+    urlWebsite: "https://chefsbook.org",
   },
   {
     title: "Noir Fatale - dark electronics",
