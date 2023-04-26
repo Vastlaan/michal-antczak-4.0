@@ -13,7 +13,7 @@ export const portfolio: IPortfolio[] = [
     title: "VueBank",
     image: VuebankImage,
     year: "2023",
-    techStack: ["Vue3", "NodeJs", "SCSS"],
+    techStack: ["Vue 3", "NodeJs", "SCSS"],
     description: `VueBank is a hypotetic bank which is implemented as a POC for developing application in Vue 3. 
     It's main functionality is built around Accounts page which allows to drill in the transactions.`,
     urlWebsite: "https://vuebank.michalantczak.com",
@@ -30,7 +30,7 @@ export const portfolio: IPortfolio[] = [
     ],
     description: `First Hair is a website made for a hairdresser. This project is given truely modern design and user friendly navigation.
     It offers easy to follow appointment reservation system as well as many 'call to action' elements.`,
-    urlWebsite: "https://firsthair.itcontext.nl/",
+    urlWebsite: "https://firsthair.michalantczak.com/",
   },
   {
     title: "Golden Shoe - webshop",

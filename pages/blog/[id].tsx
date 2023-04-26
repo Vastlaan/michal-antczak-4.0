@@ -18,7 +18,7 @@ export async function getServerSideProps(ctx) {
   const {
     params: { id },
   } = ctx;
-  const res = await fetch(`https://api.itcontext.nl/articles/${id}`);
+  const res = await fetch(`https://api.michalantczak.com/articles/${id}`);
   const data = (await res.json()) as Post;
   return {
     props: { post: data },
