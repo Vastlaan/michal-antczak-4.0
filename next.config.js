@@ -1,12 +1,6 @@
-const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
-
-module.exports = withPWA({
+module.exports = {
     images: {
-        domains: ["michalantczakblogresources.s3.eu-central-1.amazonaws.com"],
+        loader: 'akamai',
+        path: ''
     },
-    pwa: {
-        dest: "public",
-        runtimeCaching,
-    },
-});
+}

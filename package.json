@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start -p 2988"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com-vastlaan:Vastlaan/goldenshoe.git"
+    "url": "git@github.com:Vastlaan/michal-antczak-4.0.git"
   },
   "keywords": [],
   "author": "",

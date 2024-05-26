@@ -18,9 +18,7 @@ export default function List() {
       <Link href="/contact">
         <li>Contact</li>
       </Link>
-      <Link href="/blog">
-        <li>Blog</li>
-      </Link>
+
     </Container>
   );
 }
