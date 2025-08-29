@@ -29,7 +29,7 @@ const StylesConatiner = createGlobalStyle<ThemeProps>`
       ${() => respond("l", `font-size:55%;`)}    
       ${() => respond("xl", `font-size:62.5%;`)} 
       ${() => respond("xxl", `font-size:65%;`)}
-      ${() => respond("tv", `font-size:100%;`)}
+      ${() => respond("tv", `font-size:65%;`)}
       ${() => respond("m", "line-height: 1.6;")};
   }
   

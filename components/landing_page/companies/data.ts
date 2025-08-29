@@ -6,7 +6,8 @@ export const data = [
     height: "55",
     color: "#279BA1",
     title: "Software Engineer",
-    description: "Building Woodiwng Studio content creation and multichannel publishing software",
+    description:
+      "Building Woodwing Studio - content creation and multichannel publishing software",
   },
   {
     src: "/img/sap-logo-svg.svg",

@@ -20,7 +20,7 @@ function Form({ theme }) {
   function sendForm(e) {
     e.preventDefault();
     const data = { name, email, msg: message };
-    fetch("/api/submitContactForm", {
+    fetch("https://z0u8j9hzm9.execute-api.eu-central-1.amazonaws.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

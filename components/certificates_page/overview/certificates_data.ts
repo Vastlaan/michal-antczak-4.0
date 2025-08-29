@@ -6,8 +6,15 @@ import Cert4 from "../../../public/img/cert-4.png";
 import Cert9 from "../../../public/img/cert-9.jpg";
 import Cert7 from "../../../public/img/cert-7.png";
 import Cert8 from "../../../public/img/cert-8.png";
+import Cert10 from "../../../public/img/aws-solutions-architect-cert.png";
 
 export const certificates: ICertificate[] = [
+  {
+    title: "AWS Solutions Architect",
+    image: Cert10,
+    issuedBy: "Amazon Web Services",
+    year: "June, 2025",
+  },
   {
     title: "Professional Scrum Master I",
     image: Cert9,
